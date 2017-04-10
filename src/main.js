@@ -9,6 +9,7 @@ import Dialog from './components/dialog'
 Vue.use(iView);
 Vue.use(components);
 window.Vue = Vue;
+window.iView = iView;
 
 window.Dialog = Dialog;
 window.jQuery = window.$ = jQuery;
