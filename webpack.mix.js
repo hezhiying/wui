@@ -58,6 +58,7 @@ if (mix.config.inProduction) {
     mix.copyDirectory('src/styles/assets', './dist/styles/assets');
     mix.minify(`./dist/styles/${outStyleFilename}`);
     mix.minify(`./dist/${outScriptFilename}`);
+    mix.copyDirectory('dist', '../wulaui');
 }
 
 
