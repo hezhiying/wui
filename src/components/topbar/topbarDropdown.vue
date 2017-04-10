@@ -18,6 +18,7 @@
                                        :text-style="menu.textStyle"
                                        :text-target="menu.target"
                                        :badge="menu.badge"
+                                       :target="menu.target"
                                        :disabled="menu.disabled"
                                        :data="menu.data" :key="index">
 
@@ -40,8 +41,7 @@
                 required: true
             },
             url     : {
-                type    : String,
-                required: true
+                type    : String
             },
             data     : {
                 type    : Object,

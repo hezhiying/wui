@@ -1,16 +1,28 @@
 <template>
-    <li class="divider" v-if="name=='divider'"></li>
-    <li :class="{'wula-dropdown-item-disabled':disabled}" v-else>
-        <a tabindex="-1" :href="disabled?'javascript:void(0);':showUrl" :target="target" v-bind="data">
-            <span :class="iconCls" :style="iconStyle" v-html="iconHtml" v-if="icon"></span>
-            <span :class="textCls" :style="textStyle" v-cloak> {{name}} </span>
-            <span class="topbar-submenu-badge" v-if='badge'>{{badge}}</span>
+    <li class="divider"
+        v-if="name=='divider'">
+    </li>
+    <li :class="{'wula-dropdown-item-disabled':disabled}"
+        v-else>
+        <a tabindex="-1"
+           :href="disabled?'javascript:void(0);':showUrl"
+           @click.stop.prevent="data.confirm?handleConfirm():handleClick()">
+            <span :class="iconCls"
+                  :style="iconStyle"
+                  v-html="iconHtml"
+                  v-if="icon"></span>
+            <span :class="textCls"
+                  :style="textStyle"
+                  v-cloak> {{name}} </span>
+            <span class="topbar-submenu-badge"
+                  v-if='badge'>{{badge}}</span>
         </a>
     </li>
 </template>
 
 <script lang="babel">
     import {fnMenu} from '../../utils/fn'
+    import ajax from '../../utils/ajax'
     export default{
         name      : 'TopbarDropdownItem',
         props     : {
@@ -20,6 +32,7 @@
             },
             url      : {
                 type    : String,
+                default : ''
             },
             data     : {
                 type   : Object,
@@ -56,6 +69,37 @@
         data(){
             return {
                 msg: 'hello vue'
+            }
+        },
+        methods:{
+            handleClick(){
+          
+                let url = this.url;
+                let target = this.target;
+                if (target == '_self') {
+                    location.href = url;
+                } else if (target == '_blank') {
+                    window.open(url);
+                } else if (/^https?:\/\/.+/i.test(url)) {
+                    location.href = url;
+                } else if (target == 'ajax') {
+                    ajax.any({
+                        url     : fnMenu.formatHashUrl(url),
+                        dataType: 'json',
+                        method  : this.data.method?this.data.method:'get'
+                    }).json((data)=>{
+                        console.log(data)
+                    });
+
+                } else {
+                    location.href = url;
+                }
+
+            },
+            handleConfirm(){
+                console.log('confirm')
+                let title = this.data.confirmTitle?this.data.confirmTitle:'确认';
+                this.$Modal.confirm({title:title,content:this.data.confirm,onOk:()=>{this.handleClick()}})
             }
         },
         components: {}

@@ -38,7 +38,6 @@
 
 <script lang="babel">
     import {fnMenu} from '../../utils/fn'
-    import topbarMenuItem from './menuItem.vue'
     import wulaTopbarButton from './topbarButton.vue'
     import wulaTopbarDropdown from './topbarDropdown.vue'
     import emitter from '../../mixins/emitter'
@@ -46,7 +45,7 @@
     export default{
         name:'TopbarGroup',
         mixins:[emitter],
-        components:{ topbarMenuItem,wulaTopbarButton,wulaTopbarDropdown },
+        components:{ wulaTopbarButton,wulaTopbarDropdown },
         props:{
             menuUrl:{
                 type:String,
