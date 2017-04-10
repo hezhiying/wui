@@ -1,0 +1,13 @@
+{
+  "code": 200,
+  "message": "这是一则消息提示信息！",
+  "action": "dialog",
+  "style":"message",
+  "args": {
+	"ajax": "/examples/components/dialog/html.html",
+	"title": "json返回dialog再以ajax方式加载出来",
+	"content": "9999",
+	"width": "800",
+	"height": "300"
+  }
+}

@@ -1,0 +1,492 @@
+.login-main {
+  & {
+    background: #001a30;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1110px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px
+  }
+  @media (min-width: 700px) {
+    .container {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row
+    }
+  }
+  .container--large {
+    max-width: 1240px
+  }
+  .container--full {
+    max-width: 95%
+  }
+  .container--small {
+    max-width: 960px
+  }
+  main {
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+
+  .page {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+  }
+
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
+
+  nav ul li {
+    margin: 0 10px
+  }
+
+  nav ul li:first-child {
+    margin-left: 0
+  }
+
+  nav ul li:last-child {
+    margin-right: 0
+  }
+
+  nav ul a {
+    color: #FFFFFF;
+    text-decoration: none
+  }
+
+  .page-banner {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #fff;
+    color: #111
+  }
+
+  .page-banner--product-hunt {
+    border-bottom: 3px solid #d55938;
+    box-shadow: 0 -1px 23px 0 rgba(0, 0, 0, .5)
+  }
+
+  .page-banner--product-hunt .page-banner__title {
+    color: #d55938
+  }
+
+  .page-banner__content {
+    width: 100%
+  }
+
+  @media (min-width: 600px) {
+    .page-banner__content {
+      padding-left: 40px
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .page-banner__content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
+    }
+  }
+
+  .page-banner__title {
+    font-size: 24px;
+    margin-top: .5em;
+    font-weight: 500;
+    margin-bottom: 0
+  }
+
+  .page-banner__desc {
+    font-size: 14px;
+    margin-top: 6px
+  }
+
+  .page-banner__cta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
+
+  .page-banner__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: .3;
+    -webkit-transition: .15s linear;
+    transition: .15s linear;
+    cursor: pointer
+  }
+
+  .page-banner__close:hover {
+    opacity: .8
+  }
+
+  .page-banner__close .icon {
+    font-size: 24px
+  }
+
+  .page-header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-family: Space Mono, monospace;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
+
+  @media (min-width: 700px) {
+    .page-header {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row
+    }
+  }
+
+  .page-header__brand a {
+    color: #FFFFFF;
+    font-size: 24px;
+    text-decoration: none
+  }
+  .page-header__brand h1 {
+    margin: 20px 0;
+  }
+
+  .page-header__brand a:hover {
+    color: #11e7bb
+  }
+
+  .main-nav__link {
+    color: #ffffff;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .7)
+  }
+
+  .main-nav__link:hover {
+    border-color: #008cff
+  }
+
+  .main-nav__link:active {
+    border-color: rgba(0, 140, 255, .5)
+  }
+
+  .hero {
+    position: relative;
+    background-image: url('#{$wula-assets-path}/login/bg-water.png?v=#{$wula-version}');
+    background-size: cover;
+    background-position: top;
+    overflow: hidden
+  }
+  
+  .hero__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    min-height: 280px
+  }
+
+  @-webkit-keyframes a {
+    0% {
+      left: -200px;
+      -webkit-transform: none;
+      transform: none;
+      z-index: 0;
+      bottom: -14px
+    }
+    10% {
+      bottom: 0
+    }
+    20% {
+      bottom: -10px
+    }
+    30% {
+      bottom: 0
+    }
+    40% {
+      bottom: -10px
+    }
+    50% {
+      left: 105%;
+      -webkit-transform: none;
+      transform: none;
+      z-index: 0;
+      bottom: 0
+    }
+    51% {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      z-index: 1
+    }
+    60% {
+      bottom: -10px
+    }
+    70% {
+      bottom: 0
+    }
+    80% {
+      bottom: -10px
+    }
+    90% {
+      bottom: 0
+    }
+    to {
+      left: -200px;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      z-index: 1;
+      bottom: -10px
+    }
+  }
+
+  @keyframes a {
+    0% {
+      left: -200px;
+      -webkit-transform: none;
+      transform: none;
+      z-index: 0;
+      bottom: -14px
+    }
+    10% {
+      bottom: 0
+    }
+    20% {
+      bottom: -10px
+    }
+    30% {
+      bottom: 0
+    }
+    40% {
+      bottom: -10px
+    }
+    50% {
+      left: 105%;
+      -webkit-transform: none;
+      transform: none;
+      z-index: 0;
+      bottom: 0
+    }
+    51% {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      z-index: 1
+    }
+    60% {
+      bottom: -10px
+    }
+    70% {
+      bottom: 0
+    }
+    80% {
+      bottom: -10px
+    }
+    90% {
+      bottom: 0
+    }
+    to {
+      left: -200px;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      z-index: 1;
+      bottom: -10px
+    }
+  }
+
+  .hero__fin {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: -160px;
+    -webkit-animation: a 14s ease infinite;
+    animation: a 14s ease infinite;
+    height: 110px
+  }
+
+  .hero__fin img,.hero__fin .i-amphtml-fill-content {
+    max-width: none;
+    background-image: url('#{$wula-assets-path}/login/shark.svg?v=#{$wula-version}');
+    width: 157px;
+    height: 115px;
+    background-size: 100%;
+    border: none;
+  }
+
+  .hero__title {
+    position: relative;
+    z-index: 0;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 70px;
+    padding-left: 20px;
+    padding-right: 20px
+  }
+
+  @media (min-width: 700px) {
+    .hero__title {
+      font-size: 38px;
+      padding: 0
+    }
+  }
+
+  .hero__title strong {
+    font-weight: 500
+  }
+
+  .waitlist {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 40px 0 50px;
+    margin-bottom: 20px;
+    //border-bottom: 1px solid rgba(5, 212, 255, .2)
+  }
+
+  .waitlist__content {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    color: #11e7bb
+  }
+
+  .waitlist__content, .waitlist__content > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+  }
+
+  .waitlist__title {
+    font-family: Space Mono, monospace;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700
+  }
+
+  .waitlist__desc {
+    margin: 3px 0 0;
+    font-size: 16px
+  }
+
+  .waitlist__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px 20px
+  }
+
+  .waitlist__badge {
+    padding: 2px 10px;
+    margin-right: 10px
+  }
+
+  .badge {
+    font-family: Space Mono, monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 30px;
+    padding: 0 10px;
+    background: #f6a51a;
+    color: #001a30;
+    white-space: nowrap
+  }
+
+  .page-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    margin-top: 30px;
+    background: rgba(0, 140, 255, .15);
+    padding: 20px 0 30px
+  }
+  .page-footer .container {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row
+  }
+
+  .page-footer .icon {
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+    margin-right: 4px
+  }
+
+  .page-footer .icon path {
+    fill: #fff
+  }
+
+  .page-footer a:hover .icon path {
+    fill: #008cff
+  }
+}

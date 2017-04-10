@@ -1,0 +1,124 @@
+<div id="page-ajax-dialog" class="markdown">
+	<wula-console-title>
+		AjaxDialog Example
+	</wula-console-title>
+
+	<h2>Dialog</h2>
+	<div class="anchor"><h3 id="概述"><a href="#概述" class="header-anchor">¶</a>概述</h3> </div>
+	<p>轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。</p>
+	<div class="anchor"> <h3 id="代码示例"><a href="#代码示例" class="header-anchor">¶</a>代码示例</h3> </div>
+	<demo-box>
+		<div class="box-demo-show" slot="component" >
+			<p>直接以Dialog方式加载Ajax链接</p>
+			<wula-ajax-button type="primary" url="/examples/components/dialog/html.html" dialog>click me</wula-ajax-button>
+			<br><br>
+			<wula-ajax-button url="/examples/components/dialog/html.html" dialog :dialog-data="{title:'这是标题'}">有标题</wula-ajax-button>
+			<br><br>
+			<wula-ajax-button  url="/examples/components/dialog/html.html" dialog :dialog-data="{title:'我没有默认的确定按钮',showOk:false}">有标题</wula-ajax-button>
+			<br><br>
+			<wula-ajax-button  url="/examples/components/dialog/dialog-form.html" dialog :dialog-data="{title:'a new form dialog',showOk:false}">form</wula-ajax-button>
+			<wula-ajax-button  url="/examples/components/dialog/dialog-form-fail.html" dialog :dialog-data="{title:'a new form dialog',showOk:false}">form-fail</wula-ajax-button>
+
+		</div>
+		<div slot="description">
+			<div>
+				<h4 id="an-niu-lei-xing">
+				<a  href="#an-niu-lei-xing" aria-hidden="true" class="header-anchor">¶</a>ajax Html 直接加载</h4>
+				<p>通过ajax html方式直接以</p>
+			</div>
+		</div>
+		<div class="highlight" slot="code">
+			<div class="highlight">
+				<pre><code class="hljs language-html">
+&lt;wula-ajax-button type="primary" url="/examples/components/dialog/html.html" dialog&gt;
+		click me
+&lt;/wula-ajax-button&gt;
+
+				</code></pre>
+			</div>
+		</div>
+	</demo-box>
+
+	<demo-box>
+		<div class="box-demo-show" slot="component" >
+			<p>ajax json 间接加载</p>
+			<wula-ajax-button  url="/examples/components/dialog/dialog-content.json">ajax json content</wula-ajax-button>
+			<br><br>
+			<wula-ajax-button  url="/examples/components/dialog/dialog-ajax.json">ajax json ajax</wula-ajax-button>
+		</div>
+		<div slot="description">
+			<div>
+				<h4 id="an-niu-lei-xing">
+					<a  href="#an-niu-lei-xing" aria-hidden="true" class="header-anchor">¶</a>ajax json 间接加载</h4>
+				<p>通过ajax html方式直接以</p>
+			</div>
+		</div>
+		<div class="highlight" slot="code">
+			<div class="highlight">
+				<pre><code class="hljs language-html">html javascript code</code></pre>
+			</div>
+		</div>
+	</demo-box>
+
+	<h2>API</h2>
+	<h3>Ajax Button</h3>
+	<table class="table">
+		<thead>
+		<tr>
+			<th>参数</th>
+			<th>说明</th>
+			<th>类型</th>
+			<th>默认值</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>url</td>
+			<td>ajax加载地址</td>
+			<td>string</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>dialog</td>
+			<td>是否为dialog方式</td>
+			<td>boolean</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>confirm</td>
+			<td>执行前先弹确确认对话框，值为提示内容</td>
+			<td>string</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>dialog-data</td>
+			<td>对话框相关属性</td>
+			<td>object</td>
+			<td>{}</td>
+		</tr>
+		<tr>
+			<td>params</td>
+			<td>ajax加载参数</td>
+			<td>object</td>
+			<td>{}</td>
+		</tr>
+		<tr>
+			<td>method</td>
+			<td>ajax加载方式get post put delete</td>
+			<td>string</td>
+			<td>get</td>
+		</tr>
+		<tr>
+			<td>placement</td>
+			<td>confirm气泡提示弹出的位置,可选值为top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end</td>
+			<td>string</td>
+			<td>top</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<script>
+	new Vue({
+		el: '#page-ajax-dialog'
+	})
+</script>

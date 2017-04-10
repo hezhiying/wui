@@ -1,0 +1,31 @@
+<div id="dialog-form">
+	<Row>
+		<i-col span="24">
+			<wula-ajax-form  label-position="top" :form-data="users" url="/examples/json/submit-fail.json" method="get" @on-submit="submit">
+				<form-item label="姓名" prop="name" :required="true" :rules="{required: true}">
+					<i-input v-model="users.forms.name" placeholder="请输入姓名"></i-input>
+				</form-item>
+				<form-item label="邮箱" prop="mail">
+					<i-input v-model="users.forms.mail" placeholder="请输入邮箱"></i-input>
+				</form-item>
+			</wula-ajax-form>
+		</i-col>
+	</Row>
+</div>
+
+<script>
+	new Vue({
+		el:'#dialog-form',
+		data:{
+			users:{
+				forms:{name:'',mail:''}
+			}
+		},
+		methods:{
+			submit(data){
+				console.log('submit',data);
+				this.$Dialog.remove();
+			}
+		}
+	})
+</script>

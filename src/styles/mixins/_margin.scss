@@ -1,0 +1,16 @@
+@mixin margin($size,$side:all) {
+  @if $side == all{
+    margin: $size + px!important;
+  }@else{
+    margin-#{$side} : $size + px!important;
+  }
+}
+
+@mixin padding($size,$side:all) {
+  @if $side == all{
+    padding: $size + px!important;
+  }@else{
+    padding-#{$side} : $size + px!important;
+  }
+}
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login Page</title>
+	<meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1">
+	<link rel="stylesheet" href="../dist/styles/ui.css">
+	<script src="../dist/ui.js"></script>
+	<style>
+		body{
+			background-color: #001a30;
+		}
+	</style>
+</head>
+
+<body>
+<div id="login-page">
+	<wula-login-page url="json/login.json" method="get"></wula-login-page>
+</div>
+
+<script>
+	new Vue({
+		el:'#login-page'
+	})
+</script>
+</body>
+</html>

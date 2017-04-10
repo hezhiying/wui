@@ -1,0 +1,9 @@
+$fa-font-path:  "fonts/font-awesome";
+@import "~font-awesome/scss/font-awesome.scss";
+
+
+@import "./custom";
+@import "./mixins/index";
+@import "./core/index";
+@import "./components/index";
+

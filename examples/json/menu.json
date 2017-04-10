@@ -1,0 +1,700 @@
+{
+  "sidebar": [
+	{
+	  "id": 1,
+	  "name": "\u7cfb\u7edf\u8bbe\u7f6e",
+	  "title": "\u7cfb\u7edf\u8bbe\u7f6e\u5bfc\u822a",
+	  "icon": "",
+	  "url": "",
+	  "target": "",
+	  "textCls": "",
+	  "textStyle": "",
+	  "iconStyle": "",
+	  "iconCls": "",
+	  "level": 1,
+	  "child": [
+		{
+		  "id": 2,
+		  "name": "\u7f51\u7ad9\u8bbe\u7f6e",
+		  "title": "\u7f51\u7ad9\u8bbe\u7f6e",
+		  "url": "#zine\/home\/abc",
+		  "icon": "<i class=\"fa fa-user-md\"><\/i>",
+		  "level": 2,
+		  "child": []
+		},
+		{
+		  "id": 3,
+		  "name": "\u7f13\u5b58\u8bbe\u7f6e",
+		  "title": "\u7f13\u5b58\u8bbe\u7f6e",
+		  "url": "#zine\/home\/bcd",
+		  "icon": "<i class=\"fa fa-car\"><\/i>",
+		  "level": 2
+		}
+	  ]
+	},
+	{
+	  "id": "21",
+	  "name": "\u6587\u7ae0\u7ba1\u7406",
+	  "title": "\u6587\u7ae0\u7ba1\u7406",
+	  "icon": "",
+	  "url": "",
+	  "target": "",
+	  "textCls": "",
+	  "textStyle": "",
+	  "iconStyle": "",
+	  "iconCls": "",
+	  "level": 1,
+	  "child": [
+		{
+		  "id": "22",
+		  "name": "\u680f\u76ee\u8bbe\u7f6e",
+		  "title": "\u680f\u76ee\u8bbe\u7f6e",
+		  "icon": "",
+		  "url": "#zine\/home\/bbb",
+		  "target": "",
+		  "textCls": "",
+		  "textStyle": "",
+		  "iconStyle": "",
+		  "iconCls": "",
+		  "level": 2,
+		  "child": [
+			{
+			  "id": "223",
+			  "name": "\u7528\u6237\u5217\u8868",
+			  "title": "\u7528\u6237\u5217\u8868",
+			  "icon": "",
+			  "url": "#zine\/home\/user",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3,
+			  "child": []
+			},
+			{
+			  "id": "224",
+			  "name": "\u6dfb\u52a0\u7528\u6237",
+			  "title": "\u6dfb\u52a0\u7528\u6237",
+			  "icon": "",
+			  "url": "",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3,
+			  "child": [
+				{
+				  "id": "2244",
+				  "name": "VIP\u7528\u6237",
+				  "title": "VIP\u7528\u6237",
+				  "icon": "",
+				  "url": "#zine\/home\/list",
+				  "target": "",
+				  "textCls": "",
+				  "textStyle": "",
+				  "iconStyle": "",
+				  "iconCls": "",
+				  "level": 4,
+				  "child":[
+					{"name":"增加用户","url":"1/1/1"},
+					{"name":"修改用户","url":"1/1/2"},
+					{"name":"删除用户","url":"1/1/3"}
+				  ]
+
+				}
+			  ]
+			}
+		  ]
+		},
+		{
+		  "id": "22",
+		  "name": "Form\u7ec4\u4ef6",
+		  "title": "Form\u7ec4\u4ef6",
+		  "icon": "<i class=\"fa fa-cube\"><\/i>",
+		  "url": "#zine\/html\/console-title",
+		  "target": "",
+		  "textCls": "",
+		  "textStyle": "",
+		  "iconStyle": "",
+		  "iconCls": "",
+		  "level": 2,
+		  "child": [
+			{
+			  "id": "223",
+			  "name": "console-title",
+			  "title": "console-title",
+			  "icon": "",
+			  "url": "#zine\/html\/console-title",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3,
+			  "child": []
+			},
+			{
+			  "id": "224",
+			  "name": "button",
+			  "title": "button",
+			  "icon": "",
+			  "url": "#zine\/html\/button",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "224",
+			  "name": "table",
+			  "title": "table",
+			  "icon": "",
+			  "url": "#zine\/html\/table",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "form",
+			  "title": "form",
+			  "icon": "",
+			  "url": "#zine\/html\/form",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "226",
+			  "name": "form-element",
+			  "title": "form-element",
+			  "icon": "",
+			  "url": "#zine\/html\/form-element",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "alerts",
+			  "title": "alerts",
+			  "icon": "",
+			  "url": "#zine\/html\/alert",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "tabs",
+			  "title": "tabs",
+			  "icon": "",
+			  "url": "#zine\/html\/tabs",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "page",
+			  "title": "page",
+			  "icon": "",
+			  "url": "#zine\/html\/page",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			}
+		  ]
+		}
+	  ]
+	},
+	{"name":"","child":[
+	  {
+		"name":"帮助文档",
+		"icon":"fa fa-envira",
+		"child":[
+		  {"name":"form","url":"/examples/components/form.html","icon":"fa fa-list-alt"},
+		  {"name":"button","url":"/examples/components/button.html","icon":"fa fa-youtube-play"},
+		  {"name":"table","url":"/examples/components/table.html","icon":"fa fa-align-justify"},
+		  {"name":"ajaxDialog","url":"/examples/components/ajaxDialog.html","icon":"fa fa-align-justify"},
+		  {"name":"ajaxButton","url":"/examples/components/ajaxButton.html","icon":"fa fa-youtube-play"},
+		  {"name":"alert","url":"/examples/docs/alert.md","icon":"fa fa-youtube-play"}
+		]
+	  }
+	]}
+  ],
+  "lefttopbar": [
+	{
+	  "id": 1,
+	  "name": "\u7cfb\u7edf\u8bbe\u7f6e",
+	  "title": "\u7cfb\u7edf\u8bbe\u7f6e\u5bfc\u822a",
+	  "icon": "",
+	  "url": "",
+	  "target": "",
+	  "textCls": "",
+	  "textStyle": "",
+	  "iconStyle": "",
+	  "iconCls": "",
+	  "level": 1,
+	  "child": [
+		{
+		  "id": 2,
+		  "name": "\u7f51\u7ad9\u8bbe\u7f6e",
+		  "title": "\u7f51\u7ad9\u8bbe\u7f6e",
+		  "url": "#zine\/home\/abc",
+		  "icon": "<i class=\"fa fa-user-md\"><\/i>",
+		  "level": 2,
+		  "child": []
+		},
+		{
+		  "id": 3,
+		  "name": "\u7f13\u5b58\u8bbe\u7f6e",
+		  "title": "\u7f13\u5b58\u8bbe\u7f6e",
+		  "url": "#zine\/home\/bcd",
+		  "icon": "<i class=\"fa fa-car\"><\/i>",
+		  "level": 2
+		}
+	  ]
+	},
+	{
+	  "id": "21",
+	  "name": "\u6587\u7ae0\u7ba1\u7406",
+	  "title": "\u6587\u7ae0\u7ba1\u7406",
+	  "icon": "",
+	  "url": "",
+	  "target": "",
+	  "textCls": "",
+	  "textStyle": "",
+	  "iconStyle": "",
+	  "iconCls": "",
+	  "level": 1,
+	  "child": [
+		{
+		  "id": "22",
+		  "name": "\u680f\u76ee\u8bbe\u7f6e",
+		  "title": "\u680f\u76ee\u8bbe\u7f6e",
+		  "icon": "",
+		  "url": "#zine\/home\/bbb",
+		  "target": "",
+		  "textCls": "",
+		  "textStyle": "",
+		  "iconStyle": "",
+		  "iconCls": "",
+		  "level": 2,
+		  "child": [
+			{
+			  "id": "223",
+			  "name": "\u7528\u6237\u5217\u8868",
+			  "title": "\u7528\u6237\u5217\u8868",
+			  "icon": "",
+			  "url": "#zine\/home\/user",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3,
+			  "child": []
+			},
+			{
+			  "id": "224",
+			  "name": "\u6dfb\u52a0\u7528\u6237",
+			  "title": "\u6dfb\u52a0\u7528\u6237",
+			  "icon": "",
+			  "url": "",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3,
+			  "child": [
+				{
+				  "id": "2244",
+				  "name": "VIP\u7528\u6237",
+				  "title": "VIP\u7528\u6237",
+				  "icon": "",
+				  "url": "#zine\/home\/list",
+				  "target": "",
+				  "textCls": "",
+				  "textStyle": "",
+				  "iconStyle": "",
+				  "iconCls": "",
+				  "level": 4
+				}
+			  ]
+			}
+		  ]
+		},
+		{
+		  "id": "22",
+		  "name": "Form\u7ec4\u4ef6",
+		  "title": "Form\u7ec4\u4ef6",
+		  "icon": "<i class=\"fa fa-cube\"><\/i>",
+		  "url": "#zine\/html\/console-title",
+		  "target": "",
+		  "textCls": "",
+		  "textStyle": "",
+		  "iconStyle": "",
+		  "iconCls": "",
+		  "level": 2,
+		  "child": [
+			{
+			  "id": "223",
+			  "name": "console-title",
+			  "title": "console-title",
+			  "icon": "",
+			  "url": "#zine\/html\/console-title",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3,
+			  "child": []
+			},
+			{
+			  "id": "224",
+			  "name": "button",
+			  "title": "button",
+			  "icon": "",
+			  "url": "#zine\/html\/button",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "224",
+			  "name": "table",
+			  "title": "table",
+			  "icon": "",
+			  "url": "#zine\/html\/table",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "form",
+			  "title": "form",
+			  "icon": "",
+			  "url": "#zine\/html\/form",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "226",
+			  "name": "form-element",
+			  "title": "form-element",
+			  "icon": "",
+			  "url": "#zine\/html\/form-element",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "alerts",
+			  "title": "alerts",
+			  "icon": "",
+			  "url": "#zine\/html\/alert",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "tabs",
+			  "title": "tabs",
+			  "icon": "",
+			  "url": "#zine\/html\/tabs",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "page",
+			  "title": "page",
+			  "icon": "",
+			  "url": "#zine\/html\/page",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			}
+		  ]
+		}
+	  ]
+	}
+  ],
+  "righttopbar": [
+	{
+	  "id": 1,
+	  "name": "\u7cfb\u7edf\u8bbe\u7f6e",
+	  "title": "\u7cfb\u7edf\u8bbe\u7f6e\u5bfc\u822a",
+	  "icon": "",
+	  "url": "",
+	  "target": "",
+	  "textCls": "",
+	  "textStyle": "",
+	  "iconStyle": "",
+	  "iconCls": "",
+	  "level": 1,
+	  "child": [
+		{
+		  "id": 2,
+		  "name": "\u7f51\u7ad9\u8bbe\u7f6e",
+		  "title": "\u7f51\u7ad9\u8bbe\u7f6e",
+		  "url": "#zine\/home\/abc",
+		  "icon": "<i class=\"fa fa-user-md\"><\/i>",
+		  "level": 2,
+		  "child": []
+		},
+		{
+		  "id": 3,
+		  "name": "\u7f13\u5b58\u8bbe\u7f6e",
+		  "title": "\u7f13\u5b58\u8bbe\u7f6e",
+		  "url": "#zine\/home\/bcd",
+		  "icon": "<i class=\"fa fa-car\"><\/i>",
+		  "level": 2
+		}
+	  ]
+	},
+	{
+	  "id": "21",
+	  "name": "\u6587\u7ae0\u7ba1\u7406",
+	  "title": "\u6587\u7ae0\u7ba1\u7406",
+	  "icon": "",
+	  "url": "",
+	  "target": "",
+	  "textCls": "",
+	  "textStyle": "",
+	  "iconStyle": "",
+	  "iconCls": "",
+	  "level": 1,
+	  "child": [
+		{
+		  "id": "22",
+		  "name": "\u680f\u76ee\u8bbe\u7f6e",
+		  "title": "\u680f\u76ee\u8bbe\u7f6e",
+		  "icon": "",
+		  "url": "#zine\/home\/bbb",
+		  "target": "",
+		  "textCls": "",
+		  "textStyle": "",
+		  "iconStyle": "",
+		  "iconCls": "",
+		  "level": 2,
+		  "child": [
+			{
+			  "id": "223",
+			  "name": "\u7528\u6237\u5217\u8868",
+			  "title": "\u7528\u6237\u5217\u8868",
+			  "icon": "",
+			  "url": "#zine\/home\/user",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3,
+			  "child": []
+			},
+			{
+			  "id": "224",
+			  "name": "\u6dfb\u52a0\u7528\u6237",
+			  "title": "\u6dfb\u52a0\u7528\u6237",
+			  "icon": "",
+			  "url": "",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3,
+			  "child": [
+				{
+				  "id": "2244",
+				  "name": "VIP\u7528\u6237",
+				  "title": "VIP\u7528\u6237",
+				  "icon": "",
+				  "url": "#zine\/home\/list",
+				  "target": "",
+				  "textCls": "",
+				  "textStyle": "",
+				  "iconStyle": "",
+				  "iconCls": "",
+				  "level": 4
+				}
+			  ]
+			}
+		  ]
+		},
+		{
+		  "id": "22",
+		  "name": "Form\u7ec4\u4ef6",
+		  "title": "Form\u7ec4\u4ef6",
+		  "icon": "<i class=\"fa fa-cube\"><\/i>",
+		  "url": "#zine\/html\/console-title",
+		  "target": "",
+		  "textCls": "",
+		  "textStyle": "",
+		  "iconStyle": "",
+		  "iconCls": "",
+		  "level": 2,
+		  "child": [
+			{
+			  "id": "223",
+			  "name": "console-title",
+			  "title": "console-title",
+			  "icon": "",
+			  "url": "#zine\/html\/console-title",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3,
+			  "child": []
+			},
+			{
+			  "id": "224",
+			  "name": "button",
+			  "title": "button",
+			  "icon": "",
+			  "url": "#zine\/html\/button",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "224",
+			  "name": "table",
+			  "title": "table",
+			  "icon": "",
+			  "url": "#zine\/html\/table",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "form",
+			  "title": "form",
+			  "icon": "",
+			  "url": "#zine\/html\/form",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "226",
+			  "name": "form-element",
+			  "title": "form-element",
+			  "icon": "",
+			  "url": "#zine\/html\/form-element",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "alerts",
+			  "title": "alerts",
+			  "icon": "",
+			  "url": "#zine\/html\/alert",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "tabs",
+			  "title": "tabs",
+			  "icon": "",
+			  "url": "#zine\/html\/tabs",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			},
+			{
+			  "id": "225",
+			  "name": "page",
+			  "title": "page",
+			  "icon": "",
+			  "url": "#zine\/html\/page",
+			  "target": "",
+			  "textCls": "",
+			  "textStyle": "",
+			  "iconStyle": "",
+			  "iconCls": "",
+			  "level": 3
+			}
+		  ]
+		}
+	  ]
+	}
+  ]
+}

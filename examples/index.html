@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<title>It works</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="../dist/styles/ui.css">
+	<script src="../dist/ui.js"></script>
+</head>
+<body>
+<div class="console-app " id="wula-app">
+
+	<wula-topbar>
+		<a href="#" class="topbar-logo">
+			<i class="fa fa-cloud"></i>
+		</a>
+		<wula-topbar-group ref="lefttopbar" class="pull-left">
+			<div class="wula-topbar-item"><a href="#" class="wula-topbar-btn">帮助文档</a></div>
+			<wula-topbar-button name="菜单" url="网址"></wula-topbar-button>
+		</wula-topbar-group>
+
+		<wula-topbar-group ref="righttopbar" class="pull-right">
+			<wula-topbar-button name="菜单" url="网址"></wula-topbar-button>
+		</wula-topbar-group>
+	</wula-topbar>
+
+	<wula-dashboard :sidebar-open="false" :sidebar-only="true" :sidebar-full="true" ref="dashboard"></wula-dashboard>
+</div>
+<script>
+	Wula.index = Wula.dashboard({
+			menuUrl:'./json/menu.json',
+			homeUrl:'./html/page.html',
+			loginUrl:'/zine/login'
+	});
+
+</script>
+</body>
+</html>
+

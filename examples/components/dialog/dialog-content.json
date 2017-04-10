@@ -1,0 +1,12 @@
+{
+  "code": 200,
+  "message": "这是一则消息提示信息！",
+  "action": "dialog",
+  "style":"message",
+  "args": {
+	"title": "title",
+	"content": "json中直接返回内容<alert type='error' show-icon>我是通过<strong>ajax</strong>打开的一个页面</alert>",
+	"width": "500",
+	"height": "300"
+  }
+}

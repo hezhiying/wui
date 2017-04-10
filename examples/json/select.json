@@ -1,0 +1,15 @@
+{
+  "code": 200,
+  "message": "",
+  "action": "message",
+  "style":"notice",
+  "items":[
+	{"value":1,"label":"1111"},
+	{"value":2,"label":"2222"},
+	{"value":3,"label":"3333"},
+	{"value":4,"label":"4444"},
+	{"value":5,"label":"5555"},
+	{"value":6,"label":"6666"},
+	{"value":7,"label":"77777"}
+  ]
+}

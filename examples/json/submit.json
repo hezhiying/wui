@@ -1,0 +1,13 @@
+{
+    "code": "422",
+    "message": "",
+    "action": "validate",
+    "args": {
+        "errors": {
+            "name": ["用户名不能为空", "用户名不存在"],
+            "mail": "邮箱不存在",
+            "city2": "city2不存在"
+
+        }
+    }
+}

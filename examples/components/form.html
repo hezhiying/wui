@@ -1,0 +1,240 @@
+
+<div id="app-2" :style="{'margin-right':mr+'px'}">
+	<wula-console-title>
+		Form example
+
+		<wula-ajax-button slot="right" type="primary" url="/examples/json/click.json" confirm="确定添加吗" placement="bottom">添加</wula-ajax-button>
+		<i-button slot="right">添加</i-button>
+		<i-button slot="right">Default</i-button>
+	</wula-console-title>
+	<alert type="success" show-icon closable>
+		成功提示文案{{createUserForm.forms.pic}}
+		<span slot="desc">成功的提示描述文案成功的提示描述文案成功的提示描述文案成功的提示描述文案成功的提示描述文案</span>
+	</alert>
+	<tabs  :animated="false">
+		<tab-pane label="标签一">
+			<row>
+				<i-col :xs="24" :sm="20" :md="16" :lg="12">
+					<wula-ajax-form :label-width="80"  :form-data="createUserForm" url="/examples/json/submit.json">
+						<form-item label="姓名" prop="name" :required="true" :rules="{required: true}">
+							<i-input v-model="createUserForm.forms.name" placeholder="请输入姓名"></i-input>
+						</form-item>
+						<form-item label="邮箱" prop="mail">
+							<i-input v-model="createUserForm.forms.mail" placeholder="请输入邮箱"></i-input>
+						</form-item>
+						<form-item label="城市" prop="city">
+							<i-select v-model="createUserForm.forms.city" placeholder="请选择所在地">
+								<i-option value="beijing">北京市</i-option>
+								<i-option value="shanghai">上海市</i-option>
+								<i-option value="shenzhen">深圳市</i-option>
+							</i-select>
+						</form-item>
+						<form-item label="选择日期">
+							<row>
+								<i-col span="11">
+									<form-item prop="date">
+										<date-picker type="date" placeholder="选择日期" v-model="createUserForm.forms.date"></date-picker>
+									</form-item>
+								</i-col>
+								<i-col span="2" style="text-align: center">-</i-col>
+								<i-col span="11">
+									<form-item prop="time">
+										<time-picker type="time" placeholder="选择时间" v-model="createUserForm.forms.time"></time-picker>
+									</form-item>
+								</i-col>
+							</row>
+						</form-item>
+						<form-item label="性别" prop="gender">
+							<radio-group v-model="createUserForm.forms.gender">
+								<radio label="male">男</radio>
+								<radio label="female">女</radio>
+							</radio-group>
+						</form-item>
+						<form-item label="图片" prop="pic">
+							<wula-upload-input v-model="createUserForm.forms.pic" url="//jsonplaceholder.typicode.com/posts/">
+
+							</wula-upload-input>
+						
+						</form-item>
+						</form-item>
+						<form-item label="图片" prop="pic">
+							<Upload action="//jsonplaceholder.typicode.com/posts/" v-model="createUserForm.forms.pic2" ref="pic">
+								<i-button type="ghost" icon="ios-cloud-upload-outline">上传文件</i-button>
+							</Upload>
+						</form-item>
+						<form-item label="爱好" prop="interest">
+							<checkbox-group v-model="createUserForm.forms.interest">
+								<checkbox label="吃饭"></checkbox>
+								<checkbox label="睡觉"></checkbox>
+								<checkbox label="跑步"></checkbox>
+								<checkbox label="看电影"></checkbox>
+							</checkbox-group>
+						</form-item>
+						<form-item label="介绍" prop="desc">
+							<i-input v-model="createUserForm.forms.desc" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入..."></i-input>
+						</form-item>
+						<form-item label="select" prop="city2">
+							<wula-ajax-select v-model="createUserForm.forms.city2" url="/examples/json/select.json">
+							</wula-ajax-select>
+						</form-item>
+
+					</wula-ajax-form>
+				</i-col>
+
+			</row>
+		</tab-pane>
+		<tab-pane label="标签二">标签二的内容</tab-pane>
+		<tab-pane label="标签三">标签三的内容</tab-pane>
+		<i-button slot="extra" size="small" @click="visible=!visible">{{visible}}关闭高级搜索</i-button>
+	</tabs>
+
+	<wula-right-bar v-model="visible" @on-open="mr=250"  @on-close="mr=0" >
+		<alert type="success"  closable>
+			成功提示文案
+		</alert>
+		<tabs  :animated="false" size="small">
+			<tab-pane label="标签一">
+				<row>
+					<i-col :xs="24" :sm="24" :md="24" :lg="24">
+						<wula-ajax-form :label-width="80"  :form-data="createUserForm" url="/examples/json/submit.json">
+							<form-item label="姓名" prop="name" :required="true" :rules="{required: true}">
+								<i-input v-model="createUserForm.forms.name" placeholder="请输入姓名"></i-input>
+							</form-item>
+							<form-item label="邮箱" prop="mail">
+								<i-input v-model="createUserForm.forms.mail" placeholder="请输入邮箱"></i-input>
+							</form-item>
+							<form-item label="城市" prop="city">
+								<i-select v-model="createUserForm.forms.city" placeholder="请选择所在地">
+									<i-option value="beijing">北京市</i-option>
+									<i-option value="shanghai">上海市</i-option>
+									<i-option value="shenzhen">深圳市</i-option>
+								</i-select>
+							</form-item>
+							<form-item label="选择日期">
+								<row>
+									<i-col span="24">
+										<form-item prop="date">
+											<date-picker type="date" placeholder="选择日期" v-model="createUserForm.forms.date" placement="bottom-end"></date-picker>
+										</form-item>
+									</i-col>
+								</row>
+							</form-item>
+							<form-item label="性别" prop="gender">
+								<radio-group v-model="createUserForm.forms.gender">
+									<radio label="male">男</radio>
+									<radio label="female">女</radio>
+								</radio-group>
+							</form-item>
+							<form-item label="爱好" prop="interest">
+								<checkbox-group v-model="createUserForm.forms.interest">
+									<checkbox label="吃饭"></checkbox>
+									<checkbox label="睡觉"></checkbox>
+									<checkbox label="跑步"></checkbox>
+									<checkbox label="看电影"></checkbox>
+								</checkbox-group>
+							</form-item>
+							<form-item label="介绍" prop="desc">
+								<i-input v-model="createUserForm.forms.desc" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入..."></i-input>
+							</form-item>
+
+						</wula-ajax-form>
+					</i-col>
+
+				</row>
+			</tab-pane>
+			<tab-pane label="标签二">标签二的内容</tab-pane>
+			<tab-pane label="标签三">标签三的内容</tab-pane>
+		</tabs>
+	</wula-right-bar>
+</div>
+<script>
+
+
+	var b=new Vue({
+		el:'#app-2',
+		data: {
+			cityList: [
+				{
+					value: 'beijing',
+					label: '北京市'
+				},
+				{
+					value: 'shanghai',
+					label: '上海市'
+				},
+				{
+					value: 'shenzhen',
+					label: '深圳市'
+				},
+				{
+					value: 'hangzhou',
+					label: '杭州市'
+				},
+				{
+					value: 'nanjing',
+					label: '南京市'
+				},
+				{
+					value: 'chongqing',
+					label: '重庆市'
+				}
+			],
+			upload:false,
+			createUserForm:{
+				forms:{
+					name: '',
+					mail: '',
+					city: '',
+					gender: '',
+					interest: [],
+					date: '',
+					time: '',
+					desc: '',
+					city2:'',
+					pic:'',
+					pic2:''
+				},
+				rules:{
+					pic:{ required: true, message: '请上传图片' },
+					mail: [
+						{ required: true, message: '邮箱不能为空', trigger: 'blur' },
+						{ type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
+					],
+					city: [
+						{ required: true, message: '请选择城市', trigger: 'change' }
+					],
+					gender: [
+						{ required: true, message: '请选择性别', trigger: 'change' }
+					],
+					interest: [
+						{ required: true, type: 'array', min: 1, message: '至少选择一个爱好', trigger: 'change' },
+						{ type: 'array', max: 2, message: '最多选择两个爱好', trigger: 'change' }
+					],
+					date: [
+						{ required: true, type: 'date', message: '请选择日期', trigger: 'change' }
+					],
+					time: [
+						{ required: true, type: 'date', message: '请选择时间', trigger: 'change' }
+					],
+					desc: [
+						{ required: true, message: '请输入个人介绍', trigger: 'blur' },
+						{ type: 'string', min: 20, message: '介绍不能少于20字', trigger: 'blur' }
+					]
+				}
+			},
+			visible:false,
+			mr:0,
+			
+
+		},
+		methods: {
+
+			handleSubmit(name) {
+				this.$refs[name].submit();
+			},
+			handleReset (name) {
+				this.$refs[name].reset();
+			}
+		}
+	})
+</script>

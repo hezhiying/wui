@@ -1,0 +1,42 @@
+$wula-assets-path:"assets/";
+$wula-version:"1.0.0";
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base: #000 !default;
+$gray-darker: lighten($gray-base, 13.5%) !default; // #222
+$gray-dark: lighten($gray-base, 20%) !default; // #333
+$gray: lighten($gray-base, 33.5%) !default; // #555
+$gray-light: lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
+
+$brand-primary: #09c !default;
+$brand-primary-dark: darken($brand-primary, 2.5%) !default;
+$brand-primary-light: lighten($brand-primary, 2.5%) !default;
+$brand-success: #4db118 !default;
+$brand-info: #00BCD4 !default;
+$brand-warning: #ffa200 !default;
+$brand-danger: #f25721 !default;
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+//color background-color border-color
+$btn-default-col: (def: #333 #f7f7f7 #ddd, hover: #333 #fff #ddd);
+$btn-primary-col: (def: #fff $brand-primary $brand-primary, hover: #fff $brand-primary-light $brand-primary-light );//#28b5d6
+$btn-success-col: (def: #fff $brand-success $brand-success, hover: #fff $brand-success $brand-success);
+$btn-info-col: (def: #fff $brand-info $brand-info, hover: #fff #26C6DA #26C6DA);
+$btn-warning-col: (def: #fff $brand-warning $brand-warning, hover: #fff lighten($brand-warning, 10%) lighten($brand-warning, 10%));
+$btn-danger-col: (def: #fff $brand-danger $brand-danger, hover: #fff lighten($brand-danger, 10%) lighten($brand-danger, 10%));
+
+
+//** Global textual link color.
+$link-color:            $brand-primary !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%) !default;
+//** Link hover decoration.
+$link-hover-decoration: underline !default;
+$btn-link-disabled-color: $gray-light !default;

@@ -1,0 +1,10 @@
+{
+  "code": 200,
+  "message": "这是一则消息提示信息！",
+  "action": "redirect",
+  "style":"confirm",
+  "target": "#/examples/components/form.html",
+  "result": {
+	"url": "#/examples/components/button.html"
+  }
+}

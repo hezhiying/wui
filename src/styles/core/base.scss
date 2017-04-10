@@ -1,0 +1,38 @@
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+$direction-list: top, right, bottom, left;
+@each $size in (5, 10, 15, 20, 25, 8, 16, 24) {
+  .margin-#{$size} {
+    @include margin($size);
+  }
+  .padding-#{$size} {
+    @include padding($size);
+  }
+  @each $direction in $direction-list {
+    .margin-#{$direction}-#{$size} {
+      @include margin($size, $direction);
+    }
+    .padding-#{$direction}-#{$size} {
+      @include padding($size, $direction);
+    }
+  }
+}
+

@@ -1,0 +1,50 @@
+.console-title {
+  padding: 16px 0;
+
+  min-height: 70px;
+  h1, h2, h3, h4, h5, h6 {
+    display: inline-block;
+    text-indent: 8px;
+    border-left: 2px solid #88B7E0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 8px;
+    vertical-align: top
+  }
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  h3 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  h4 {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  h5 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  @at-root .console-title-border {
+    border-bottom: 1px solid #DDD;
+  }
+
+  .pull-right{
+    float: right;
+    button{
+      margin-right: 8px;
+    }
+  }
+
+  .console-title-icon {
+    border-left: none;
+    text-indent: initial
+  }
+}

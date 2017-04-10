@@ -1,0 +1,33 @@
+{
+    "name": "hUI",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "private": true,
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --open --hot=. --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "babel-plugin-component": "^0.9.1",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.2.2",
+        "babel-preset-latest": "^6.24.0",
+        "babel-preset-stage-2": "^6.22.0",
+        "cross-env": "^3.2.4",
+        "jquery": "^3.2.1",
+        "laravel-mix": "^0.10.0",
+        "less": "^2.7.2",
+        "less-loader": "^4.0.2",
+        "lodash": "^4.17.4",
+        "vue": "^2.2.6"
+    },
+    "dependencies": {
+        "font-awesome": "^4.7.0",
+        "iview": "^2.0.0-rc.9"
+    }
+}

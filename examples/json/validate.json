@@ -1,0 +1,9 @@
+{
+  "code": 500,
+  "message": "数据提交成功！",
+  "action": "redirect",
+  "target": "#/examples/components/form.html",
+  "result": {
+	"url": "#/examples/components/button.html"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "code": "200",
+    "message": "内容添加成功",
+    "action": "redirect",
+    "style": "notice",
+    "target": "#/examples/components/button.html"
+}

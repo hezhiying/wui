@@ -1,0 +1,160 @@
+<div id="page-table">
+	<wula-console-title>
+		Table Examples
+	</wula-console-title>
+
+	<wula-ajax-table url="/examples/json/tables.json" :table-data="search" ref="table">
+		<template slot="search">
+			<Form-item prop="city" label="城市" :label-width="80" >
+				<i-select v-model="search.forms.city" >
+					<i-option value="beijing">北京市</i-option>
+					<i-option value="shanghai" disabled>上海市</i-option>
+					<i-option value="shenzhen">深圳市</i-option>
+				</i-select>
+			</Form-item>
+			<Form-item prop="date" label="日期" :label-width="55"  label-position="left"  :rules="{required: true}">
+				<Date-picker v-model="search.forms.date" format="yyyy/MM/dd" type="daterange"  placeholder="选择日期">
+				</Date-picker>
+			</Form-item>
+			<Form-item prop="user" label="用户名" :label-width="80" :rules="{required: true}">
+				<i-input type="text" v-model="search.forms.user" placeholder="Username">
+				</i-input>
+			</Form-item>
+		</template>
+		<template slot="search-extra">
+			<Form-item prop="city" label="城市" :label-width="55" >
+				<i-select v-model="search.forms.city" >
+					<i-option value="beijing">北京市</i-option>
+					<i-option value="shanghai" disabled>上海市</i-option>
+					<i-option value="shenzhen">深圳市</i-option>
+				</i-select>
+			</Form-item>
+			<Form-item prop="date" label="日期" :label-width="55"  label-position="left"  :rules="{required: true}">
+				<Date-picker v-model="search.forms.date" format="yyyy/MM/dd" type="daterange"  placeholder="选择日期">
+				</Date-picker>
+			</Form-item>
+			<Form-item prop="user" label="用户名" :label-width="55" >
+				<i-input type="text" v-model="search.forms.user" placeholder="Username">
+				</i-input>
+			</Form-item>
+		</template>
+	</wula-ajax-table>
+
+</div>
+
+<script>
+	var t = new Vue({
+		el: '#page-table',
+		data: {
+			search:{
+				columns:[{
+					type: 'selection',
+					width: 60,
+					align: 'center'
+				},{
+					title: '姓名',
+					key: 'name',
+					fixed:'left',
+					width: 100
+				},
+					{
+						title: '年龄',
+						width: 120,
+						key: 'age',
+						sortable:'custom',
+						filters: [
+                            {
+                                label: '电脑',
+                                value: '电脑'
+                            },
+                            {
+                                label: '手机',
+                                value: '手机'
+                            },
+                            {
+                                label: '电视机',
+                                value: '电视机'
+                            }
+                        ],
+						filterMultiple:false,
+						filterRemote:function(value,key,column){
+							this.$parent.filter(value,key,column);
+						}
+					},
+					{
+						title: '地址',
+						sortable:'custom',
+						width: 'auto',
+width: 220,
+						key: 'address',
+						filters: [
+                            {
+                                label: '北京',
+                                value: '北京'
+                            },
+                            {
+                                label: '上海',
+                                value: '上海'
+                            },
+                            {
+                                label: '深圳',
+                                value: '深圳'
+                            }
+                        ]
+					},
+					{
+						title: '地址',
+						width: 'auto',
+width: 220,
+						key: 'a'
+					},
+					{
+						title: '地址',
+						width: 'auto',
+width: 220,
+						key: 'b'
+
+					},
+					{
+						title: '操作',
+						key: 'action',
+						width: 220,
+						fixed:'right',
+						render:function (row,column) {
+							return `<i-button type="text" size="small" @click="view(row,column,row._index)">查看</i-button><wula-ajax-button type="text" url="/examples/components/dialog/html.html" dialog>click me</wula-ajax-button>`;
+						}
+					}],
+				forms:{
+					date:[],
+					date2:[],
+					user:'',
+					address:'',
+					city:''
+				},
+				rules:{}
+			}
+		},
+		methods:{
+			submit:function () {
+				this.$refs.ajaxForm.validate((valid) => {
+					if (valid) {
+						this.$Message.success('提交成功');
+					} else {
+						this.$Message.error('表单验证失败!');
+					}
+				})
+			},
+			view:function(row,colum,index){
+				console.log(row,colum,index)
+				this.$Message.info(colum.key);
+			},
+			view:function(row,colum){
+				console.log(row,colum)
+				this.$Message.info(colum.key);
+			},
+			filter:function(value,key,column){
+				console.log(value,key,column)
+			}
+		}
+	})
+</script>

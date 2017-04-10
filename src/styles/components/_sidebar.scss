@@ -1,0 +1,194 @@
+
+.wula-sidebar {
+  width: 50px;
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  background-color: #293038;
+  z-index: 102;
+
+  //侧边栏展开后的效果
+  @at-root .app-sidebar-full & {
+    width: 180px;
+    overflow-x: hidden;
+  }
+
+  //顶部展开收缩开关
+  .wula-sidebar-fold {
+    height: 30px;
+    width: 50px;
+    background: #394555;
+    color: #aeb9c2;
+    text-align: center;
+    line-height: 30px !important;
+    font-size: 12px;
+    user-select: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    &:before {
+      content: "\f009";
+    }
+
+    //侧边栏展开后的效果
+    @at-root .app-sidebar-full & {
+      width: 180px;
+      &:before {
+        content: "\f00b";
+      }
+    }
+  }
+
+  //侧边栏滚动框（解决隐藏滚动条问题）
+  .wula-sidebar-inner {
+    width: 70px;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+
+    @at-root .app-sidebar-full & {
+      width: 200px;
+    }
+
+    .sidebar-nav {
+      width: 50px;
+
+      @at-root .app-sidebar-full & {
+        width: 180px;
+      }
+      //导航条顶部标题
+      .sidebar-nav-head {
+        height: 40px;
+        background: #37424f;
+        color: #fff;
+        line-height: 40px;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        @include user-select(none);
+
+        .sidebar-title-icon {
+          float: left;
+          width: 50px;
+          text-align: center;
+          display: inline-block;
+          margin: 0;
+          vertical-align: middle;
+          i.fa {
+            @include transition-transform(0.12s)
+          }
+        }
+
+        .sidebar-title-text {
+          float: left;
+        }
+
+        .sidebar-title-manage {
+          vertical-align: middle;
+          position: absolute;
+          height: 40px;
+          width: 40px;
+          right: 0;
+          top: 0;
+          display: none;
+          @at-root .app-sidebar-full & {
+            display: block;
+          }
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 14px;
+            color: #a0abb3;
+            text-decoration: none;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      .sidebar-nav-body {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+
+        @include transition(all 0.12s ease, 0.12s ease);
+
+        li {
+          position: relative;
+          font-size: 0;
+          cursor: pointer;
+
+          &.active a {
+            background: $brand-primary !important;
+            .sidebar-item-icon {
+              color: #fff !important;
+            }
+          }
+
+          a {
+            display: block;
+            width: 100%;
+            height: 40px;
+            font-size: 12px;
+            line-height: 40px;
+            overflow: hidden;
+            cursor: pointer;
+            &:hover {
+              background: #37424f;
+            }
+            .sidebar-item-icon {
+              width: 50px;
+              height: 40px;
+              text-align: center;
+              font-size: 16px;
+              float: left;
+              color: #aeb9c2;
+            }
+            &:hover .sidebar-item-icon {
+              color: #fff;
+            }
+            .sidebar-item-title {
+              float: left;
+              overflow: hidden;
+              color: #fff;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              display: none;
+              width: 130px;
+
+              //当sidebar展开时
+              @at-root .app-sidebar-full & {
+                display: block;
+              }
+
+            }
+          }
+        }
+      }
+
+      //收缩时的效果
+      &.sidebar-nav-fold {
+        .sidebar-nav-head {
+          background: #37424f;
+          //border-bottom: 1px solid #414d5c;
+        }
+        .sidebar-title-icon i.fa {
+          @include rotate(-90deg);
+        }
+        .sidebar-nav-body {
+          height: 0 !important;
+          overflow: hidden;
+        }
+      }
+
+    }
+
+  }
+
+}
+
