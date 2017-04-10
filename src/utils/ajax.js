@@ -26,10 +26,10 @@ $.ajaxSetup({
         Loading.error();
     },
     //jqXHR jqXHR, String textStatus
-    complete(jqXHR, textStatus) {}
+    complete(jqXHR, textStatus) { }
 });
 
-var ajaxObj = function(method, url, params, opts) {
+var ajaxObj = function (method, url, params, opts) {
     this.vm = opts.vm || null;
     this.responseJson = {};
     this.opts = Object.assign({}, {
@@ -55,7 +55,7 @@ ajaxObj.prototype.handleAction = {
     },
     redirect(targetUrl = null) {
         targetUrl = targetUrl ? targetUrl : this.responseJson.target;
-        this.handleMsg[this.msgType()].call(this, function() {
+        this.handleMsg[this.msgType()].call(this, function () {
             if (targetUrl) {
                 if (targetUrl.startsWith('#')) {
                     window.location.hash = targetUrl;
@@ -76,7 +76,7 @@ ajaxObj.prototype.handleAction = {
             url: data.ajax || ''
         }
         let that = this;
-        this.handleMsg[this.msgType()].call(this, function() {
+        this.handleMsg[this.msgType()].call(this, function () {
             that.dialog = Dialog.open(dialogConfig);
         })
     }
@@ -121,7 +121,7 @@ ajaxObj.prototype.handleMsg = {
             content: this.msgContent(),
             loading: false,
             onOk: () => {
-                if (typeof(cb) == "function") {
+                if (typeof (cb) == "function") {
                     cb(true);
                 }
             }
@@ -129,10 +129,10 @@ ajaxObj.prototype.handleMsg = {
     }
 }
 
-ajaxObj.prototype.msgType = function() {
+ajaxObj.prototype.msgType = function () {
     return this.responseJson.style || 'message';
 }
-ajaxObj.prototype.msgTextStatus = function() {
+ajaxObj.prototype.msgTextStatus = function () {
     let code = this.responseJson.code || '200';
     let codeType;
     switch (code.toString().substring(0, 1)) {
@@ -152,10 +152,10 @@ ajaxObj.prototype.msgTextStatus = function() {
     }
     return codeType;
 };
-ajaxObj.prototype.msgContent = function() {
+ajaxObj.prototype.msgContent = function () {
     return this.responseJson.message || '';
 };
-ajaxObj.prototype.msgTitle = function() {
+ajaxObj.prototype.msgTitle = function () {
     let title = '';
     let msgTextStatus = this.msgTextStatus();
     if (msgTextStatus == 'success') {
@@ -171,7 +171,7 @@ ajaxObj.prototype.msgTitle = function() {
 };
 
 
-ajaxObj.prototype.json = function(cb = null) {
+ajaxObj.prototype.json = function (cb = null) {
     this.opts.dataType = 'json';
     return $.ajax(this.opts).done(data => {
         if (typeof data.code == 'number' || typeof data.code == 'string') {
@@ -196,16 +196,19 @@ ajaxObj.prototype.json = function(cb = null) {
             var validateObj = this.elm.data('validateObj');
             this.handleAction.validate.call(this, errors)
         }
-        if (this.opts.doFail) {
+        //iview Bug,需要延时300秒显示，否则可能被上一个窗口关闭
+        setTimeout(() => {
             Modal.error({
                 title: '错误',
+                width: 650,
                 content: jqXHR.responseText ? jqXHR.responseText.getBody() : '网络异常'
             });
-        }
+        }, 300);
+
     });
 };
 
-ajaxObj.prototype.html = function(cb) {
+ajaxObj.prototype.html = function (cb) {
     this.opts.dataType = 'html';
     return $.ajax(this.opts).done(cb);
 };
