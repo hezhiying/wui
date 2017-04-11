@@ -33,7 +33,7 @@ const fnMenu = {
 			} else if (target == 'ajax') {
 				return this.formatHashUrl(url);
 			} else {
-				return '#' + this.formatHashUrl(url);
+				return url;
 			}
 		} else {
 			return 'javascript:void(0);';
