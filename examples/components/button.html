@@ -22,6 +22,20 @@
 			<wula-ajax-button type="ghost" url="/examples/components/dialog.html" :dialog="true" :dialog-data="{title:'标题',showOk:false}">dialog2</wula-ajax-button>
 		</i-col>
 	</Row>
+	<p>Link</p>
+	<Row class="margin-bottom-16">
+		<i-col span="24">
+			<wula-ajax-link class="link" target="_self" url="#/examples/json/message.json">Link 1</wula-ajax-link>
+			<wula-ajax-link class="link" url="#/examples/json/message.json">Link 2</wula-ajax-link>
+			<wula-ajax-link class="link" target="_blank" url="/examples/json/message.json">Link 3</wula-ajax-link>
+			<wula-ajax-link class="link" target="ajax" url="/examples/json/message.json">message</wula-ajax-link>
+			<wula-ajax-link class="link" target="ajax" url="/examples/json/notice.json">notice</wula-ajax-link>
+			<wula-ajax-link class-name="link aa" target="ajax" confirm="确认操作" url="/examples/json/confirm.json">confirm</wula-ajax-link>
+			<wula-ajax-link class-name="link aa" target="ajax" confirm="确认操作" confirm-title="are you sure" url="/examples/json/confirm.json">confirm Modal</wula-ajax-link>
+			<wula-ajax-link class="link" target="ajax" url="/examples/json/dialog.json">dialog</wula-ajax-link>
+			<wula-ajax-link class="link" target="ajax" url="/examples/components/dialog.html" :dialog="true" :dialog-data="{title:'标题',showOk:false}">dialog2</wula-ajax-link>
+		</i-col>
+	</Row>
 	<Row class="margin-bottom-8">
 		<i-col span="24">
 			<i-button type="success" >success</i-button>

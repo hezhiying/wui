@@ -3,10 +3,11 @@ import button from './button.vue';
 import select from './select.vue';
 import table from './table.vue';
 import upload from './upload.vue';
+import link from './link.vue';
 import {defaultPrefix} from '../../utils/config'
 
 const components = {
-	form,button,select,table,upload
+	form,button,select,table,upload,link
 };
 
 export default {
