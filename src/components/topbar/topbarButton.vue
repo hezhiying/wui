@@ -1,10 +1,10 @@
 <template>
     <div class="wula-topbar-item">
-        <a class="wula-topbar-btn" :href="showUrl" :target="target" v-bind="data">
+        <wula-ajax-link class="wula-topbar-btn" :url="showUrl" :target="target" v-bind="data">
             <span :class="iconCls" :style="iconStyle" v-html="iconHtml" v-if="icon"></span>
             <span :class="textCls" :style="textStyle" v-cloak> {{name}} </span>
             <span class="wula-badge" v-if='badge'>{{badge}}</span>
-        </a>
+        </wula-ajax-link>
     </div>
 
 </template>

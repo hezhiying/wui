@@ -29,8 +29,6 @@
                                     :trigger="menu.trigger"
                                     :data="menu.data"> </wula-topbar-dropdown>
             </template>
-
-            <!--<topbar-menu-item v-for="menu in menus" :menu="menu"></topbar-menu-item>-->
             <slot name="right"></slot>
         </div>
     </div>

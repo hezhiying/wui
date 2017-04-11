@@ -476,7 +476,7 @@
 	  "id": 1,
 	  "name": "\u7cfb\u7edf\u8bbe\u7f6e",
 	  "title": "\u7cfb\u7edf\u8bbe\u7f6e\u5bfc\u822a",
-	  "icon": "",
+	  "icon": "fa fa-cog",
 	  "url": "",
 	  "target": "",
 	  "textCls": "",
@@ -493,6 +493,30 @@
 		  "icon": "<i class=\"fa fa-user-md\"><\/i>",
 		  "level": 2,
 		  "child": []
+		},
+		{
+			"name":"disabled",
+			"disabled":true,
+			"url": "#disabled"
+		},
+		{
+			"name":"confirm",
+			"url": "#confirm",
+			"data":{
+				"confirm":"确认操作"
+			}
+		},
+		{
+			"name":"confirmModal",
+			"url": "#confirmModal",
+			"badge":"10+",
+			"data":{
+				"confirm":"确认操作",
+				"confirmTitle":"标题"
+			}
+		},
+		{
+			"name":"divider"
 		},
 		{
 		  "id": 3,

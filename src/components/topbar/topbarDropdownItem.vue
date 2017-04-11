@@ -4,19 +4,11 @@
     </li>
     <li :class="{'wula-dropdown-item-disabled':disabled}"
         v-else>
-        <a tabindex="-1"
-           :href="disabled?'javascript:void(0);':showUrl"
-           @click.stop.prevent="data.confirm?handleConfirm():handleClick()">
-            <span :class="iconCls"
-                  :style="iconStyle"
-                  v-html="iconHtml"
-                  v-if="icon"></span>
-            <span :class="textCls"
-                  :style="textStyle"
-                  v-cloak> {{name}} </span>
-            <span class="topbar-submenu-badge"
-                  v-if='badge'>{{badge}}</span>
-        </a>
+        <wula-ajax-link :url="showUrl" :target="target" v-bind="data" :disabled="disabled">
+            <span :class="iconCls" :style="iconStyle" v-html="iconHtml" v-if="icon"></span>
+            <span :class="textCls" :style="textStyle" v-cloak> {{name}} </span>
+            <span class="topbar-submenu-badge" v-if='badge'>{{badge}}</span>
+        </wula-ajax-link>
     </li>
 </template>
 
