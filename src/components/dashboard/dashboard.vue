@@ -145,6 +145,14 @@
                     }
                 }).done((response)=> {
                     $('#wula-body').html(response.getBody());
+                    if (!$('#wula-body').find("script").html()) {
+                        /**
+                         * 如果没有脚本自动加上vue初始化
+                         */
+                        new Vue({
+                            el: '#wula-body'
+                        })
+                    }
                     that.$Loading.finish();
                 }).fail((error)=> {
                     $('#wula-body').html(error.responseText.getBody());
