@@ -55,7 +55,7 @@
                                     </Input>
                                 </Form-item>
                                 <Form-item label="" prop="password">
-                                    <Input type="text" v-model="login.forms.password" placeholder="password">
+                                    <Input type="password" v-model="login.forms.password" placeholder="password">
                                     <i class="fa fa-unlock-alt" slot="prepend"></i>
                                     </Input>
                                 </Form-item>
