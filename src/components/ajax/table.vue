@@ -17,9 +17,13 @@
     </Form>
 
     <Table :columns="columns" :data="items" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch">
-        <div class="page-footer" slot="footer">
+        <div class="page-footer" slot="footer" v-if="page.total">
             <div class="page-footer-left">
                 <slot name="actions">
+<<<<<<< Updated upstream
+=======
+            
+>>>>>>> Stashed changes
                 </slot>
             </div>
 
@@ -120,7 +124,11 @@ export default {
                 total:0,
                 current:1,
                 size:10,
+<<<<<<< Updated upstream
                 sizeOpts:[5,10,15,20,30,50]
+=======
+                sizeOpts:[10,15,20,30,50,100]
+>>>>>>> Stashed changes
             },
             permits:{},
             filter:{
@@ -133,6 +141,8 @@ export default {
         }
     },
     computed:{
+        showFooter(){
+        }
 
     },
     created() {
@@ -178,10 +188,14 @@ export default {
             }).json(data=>{
                 this.items = data.items;
                 if(data.page){
+<<<<<<< Updated upstream
                     this.page = data.page;
                 }
                 if(data.permits){
                     this.permits = data.permits;
+=======
+                    this.page = data.page
+>>>>>>> Stashed changes
                 }
             })
         },

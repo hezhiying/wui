@@ -145,11 +145,8 @@
 				})
 			},
 			view:function(row,colum,index){
-				console.log(row,colum,index)
-				this.$Message.info(colum.key);
-			},
-			view:function(row,colum){
-				console.log(row,colum)
+				let page = this.$refs['table'].page;
+				console.log(row,colum,index,page)
 				this.$Message.info(colum.key);
 			},
 			filter:function(value,key,column){
