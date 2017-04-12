@@ -13,7 +13,6 @@
                                     <li class="main-nav__link"><a href="#">Document</a></li>
                                     <li class="main-nav__link"><a href="#">Git</a></li>
                                 </slot>
-
                             </ul>
                         </nav>
                     </div>
@@ -27,7 +26,8 @@
                         </div>
                     </div>
                     <h1 class="hero__title">
-                        <slot name="foot">欢迎来到<strong>wula@CMS</strong></slot></h1>
+                        <slot name="welcome">欢迎来到<strong>wula@CMS</strong></slot>
+                    </h1>
                 </div>
             </div>
             <div class="waitlist container" id="early-access">
@@ -55,7 +55,7 @@
                                     </Input>
                                 </Form-item>
                                 <Form-item label="" prop="password">
-                                    <Input type="password" v-model="login.forms.password" placeholder="password">
+                                    <Input type="text" v-model="login.forms.password" placeholder="password">
                                     <i class="fa fa-unlock-alt" slot="prepend"></i>
                                     </Input>
                                 </Form-item>
@@ -64,15 +64,18 @@
                         </Col>
                     </Row>
                 </div>
-
             </div>
             <footer class="page-footer">
                 <div class="container">
                     <div class="page-header__nav">
                         <nav class="footer-nav">
                             <ul class="footer-nav__list">
-                                <li class="footer-nav__link"><a href="mailto:admin@wulaphp.com"> <i
-                                        class="fa fa-envelope-o"></i> admin@wulaphp.com</a></li>
+                                <slot name="footer">
+                                    <li class="footer-nav__link">
+                                        <a href="mailto:admin@wulaphp.com"> <i
+                                        class="fa fa-envelope-o"></i> admin@wulaphp.com</a>
+                                    </li>
+                                </slot>
                             </ul>
                         </nav>
                     </div>
@@ -100,20 +103,19 @@
             return {
                 login: {
                     forms: {
-                        user    : '',
+                        username: '',
                         password: ''
                     },
                     rules: {
                         username: {
-                            required: true
+                            required: true, message: '请问您的大名?'
                         },
                         password: {
-                            required: true
+                            required: true, message: '口令?'
                         }
                     }
                 }
             }
         }
-
     }
 </script>
