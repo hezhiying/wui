@@ -17,7 +17,7 @@
             <div class="wula-dashboard-right-sidebar" v-show="isShowSubMenus">
                 <div class="wula-dashboard-right-sidebar-menu" >
                     <div class="wula-sidebar-header">
-                        {{ activeMenu.name }} {{isSidebarSubMenuFull && isShowSubMenus}}
+                        {{ activeMenu.name }}
                     </div>
                     <div class="wula-sidebar-list">
                         <ul>

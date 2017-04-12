@@ -1,9 +1,9 @@
 <template>
     <div class="console-title console-title-border margin-bottom-24">
         <div class="pull-left">
-            <h5 >
+            <h3>
                 <slot> </slot>
-            </h5>
+            </h3>
         </div>
         <div class="pull-right">
             <slot name="right"> </slot>
