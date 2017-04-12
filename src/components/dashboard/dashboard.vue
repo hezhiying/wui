@@ -12,11 +12,9 @@
         </div>
         <!--sidebar end-->
 
-        <div class="wula-dashboard-right app-product-navbar-full" >
+        <div class="wula-dashboard-right " :class="{'app-product-navbar-full':isSidebarSubMenuFull && isShowSubMenus}" >
             <!--二级菜单折叠按钮-->
-            <transition name="move-left" @appear="afterAppear" @after-leave="afterLeave" @enter="afterEnter">
             <div class="wula-dashboard-right-sidebar" v-show="isShowSubMenus">
-                
                 <div class="wula-dashboard-right-sidebar-menu" >
                     <div class="wula-sidebar-header">
                         {{ activeMenu.name }} {{isSidebarSubMenuFull && isShowSubMenus}}
@@ -36,7 +34,6 @@
                 </div>
                
             </div>
-</transition>
             <div class="wula-dashboard-body">
                 <div class="wula-dashboard-body-inner" id="wula-body" ref="wulaBody" v-html="bodyContent">
                     <!-- 工作内容区 -->
@@ -83,29 +80,17 @@
             }
         },
         computed  : {
-            transition(){
-                return this.isSidebarSubMenuFull && this.isShowSubMenus?'move-left':'move-right'
-            },
             isShowSubMenus: function () {
                 return fnMenu.hasChild(this.activeMenu.child);
             }
         },
         watch     : {
             isSidebarFull(){
-                let that = this;
-                // this.$nextTick(()=>{
-                //     setTimeout(function(){
-                //         that.broadcaseTable();
-                //     },300);
-                // });
+
+                this.$nextTick(()=>{this.broadcaseTable();});
             },
             isSidebarSubMenuFull(){
-                let that = this;
-                // this.$nextTick(()=>{
-                //     setTimeout(function(){
-                //         that.broadcaseTable();
-                //     },300);
-                // });
+                this.$nextTick(()=>{this.broadcaseTable();});
             },
             //监控当前打开的父菜单是否有变化，有变化后重置子菜单栏为打开状态
             activeMenu: function (newVal, oldVal) {
@@ -138,22 +123,11 @@
                 this.loadHashPage();
                 this.setMenuStatus();
             });
-            // this.$nextTick(()=>{
-            //     setTimeout(function(){
-            //         that.broadcaseTable();
-            //     },300);
-            // });
+        
+           this.$nextTick(()=>{this.broadcaseTable();});
         },
         methods   : {
-            afterAppear(...data){
-                console.log('appear',data);
-            },
-            afterLeave(...data){
-                console.log('leave',data);
-            },
-            afterEnter(...data){
-                console.log('enter',data);
-            },
+            //通知表格组件重新计算宽度
             broadcaseTable(){
                 if( document.createEvent) { 
                     var event = document.createEvent ("HTMLEvents"); 
