@@ -9,6 +9,7 @@ let Modal = iView.Modal;
 
 $.ajaxSetup({
     beforeSend(jqXHR, opts) {
+        jqXHR.setRequestHeader('X-AJAX-TYPE', opts.dataType);
         jqXHR.options = opts;
         Loading.config({
             color: '#1ab394',
@@ -24,6 +25,16 @@ $.ajaxSetup({
     //jqXHR jqXHR, String textStatus, String errorThrown
     error(jqXHR, textStatus, errorThrown) {
         Loading.error();
+        let ajaxRedirect = jqXHR.getResponseHeader('X-AJAX-REDIRECT')
+        let ajaxMsg = jqXHR.getResponseHeader('X-AJAX-MESSAGE')
+        if(ajaxMsg){
+            Notice.error({title:ajaxMsg})
+        }
+        if(ajaxRedirect){
+            location.href = ajaxRedirect;
+            return;
+        }
+
     },
     //jqXHR jqXHR, String textStatus
     complete(jqXHR, textStatus) { }

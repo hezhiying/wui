@@ -50,12 +50,12 @@
                         <slot name="form">
                             <wula-ajax-form :form-data="login" inline :show-reset="false" :url="url" :method="method">
                                 <Form-item label="" prop="username">
-                                    <Input type="text" v-model="login.forms.username" placeholder="Username">
+                                    <Input type="text" v-model="login.forms.username" placeholder="用户名">
                                     <i class="fa fa-user" slot="prepend"></i>
                                     </Input>
                                 </Form-item>
                                 <Form-item label="" prop="password">
-                                    <Input type="text" v-model="login.forms.password" placeholder="password">
+                                    <Input type="password" v-model="login.forms.password" placeholder="密码">
                                     <i class="fa fa-unlock-alt" slot="prepend"></i>
                                     </Input>
                                 </Form-item>

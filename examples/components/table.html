@@ -54,7 +54,7 @@
 				},{
 					title: '姓名',
 					key: 'name',
-					fixed:'left',
+					// fixed:'left',
 					width: 100
 				},
 					{
@@ -85,7 +85,7 @@
 						title: '地址',
 						sortable:'custom',
 						width: 'auto',
-width: 220,
+// width: 220,
 						key: 'address',
 						filters: [
                             {
@@ -105,21 +105,21 @@ width: 220,
 					{
 						title: '地址',
 						width: 'auto',
-width: 220,
+// width: 220,
 						key: 'a'
 					},
 					{
 						title: '地址',
 						width: 'auto',
-width: 220,
+// width: 220,
 						key: 'b'
 
 					},
 					{
 						title: '操作',
 						key: 'action',
-						width: 220,
-						fixed:'right',
+						// width: 220,
+						// fixed:'right',
 						render:function (row,column) {
 							return `<i-button type="text" size="small" @click="view(row,column,row._index)">查看</i-button><wula-ajax-button type="text" url="/examples/components/dialog/html.html" dialog>click me</wula-ajax-button>`;
 						}

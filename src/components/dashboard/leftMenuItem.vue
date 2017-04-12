@@ -3,7 +3,7 @@
         <Tooltip :content="tips" placement="right" class="wula-tips" :disabled="sidebarFull">
             <a :href="showMenuUrl" :target="menu.target" @click="openSubMenus" v-bind="menu.data">
                 <span class="sidebar-item-icon" :class="menu.iconCls" :style="menu.iconStyle" v-html="icon"></span>
-                <span class="sidebar-item-title" :class="menu.textCls" :style="menu.textStyle" v-cloak> {{menu.name}} {{menu.uid}}</span>
+                <span class="sidebar-item-title" :class="menu.textCls" :style="menu.textStyle" v-cloak> {{menu.name}} </span>
             </a>
         </Tooltip>
 

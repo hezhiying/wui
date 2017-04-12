@@ -46,7 +46,7 @@
                 validator (value) {
                     return oneOf(value, ['get', 'post', 'put', 'delete']);
                 },
-                default:'get'
+                default:'post'
             },
             showReset:{
                 type:Boolean,

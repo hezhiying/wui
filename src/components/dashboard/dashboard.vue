@@ -12,12 +12,14 @@
         </div>
         <!--sidebar end-->
 
-        <div class="wula-dashboard-right" :class="{ 'app-product-navbar-full':isSidebarSubMenuFull && isShowSubMenus }">
+        <div class="wula-dashboard-right app-product-navbar-full" >
             <!--二级菜单折叠按钮-->
+            <transition name="move-left" @appear="afterAppear" @after-leave="afterLeave" @enter="afterEnter">
             <div class="wula-dashboard-right-sidebar" v-show="isShowSubMenus">
-                <div class="wula-dashboard-right-sidebar-menu">
+                
+                <div class="wula-dashboard-right-sidebar-menu" >
                     <div class="wula-sidebar-header">
-                        {{ activeMenu.name }}
+                        {{ activeMenu.name }} {{isSidebarSubMenuFull && isShowSubMenus}}
                     </div>
                     <div class="wula-sidebar-list">
                         <ul>
@@ -26,14 +28,15 @@
                         </ul>
                     </div>
                 </div>
-
+                
                 <div class="wula-collapse">
                     <div class="wula--collapse-inner">
                         <div class="wula-collapse-icon fa" @click="isSidebarSubMenuFull=!isSidebarSubMenuFull"></div>
                     </div>
                 </div>
+               
             </div>
-
+</transition>
             <div class="wula-dashboard-body">
                 <div class="wula-dashboard-body-inner" id="wula-body" ref="wulaBody" v-html="bodyContent">
                     <!-- 工作内容区 -->
@@ -80,11 +83,30 @@
             }
         },
         computed  : {
+            transition(){
+                return this.isSidebarSubMenuFull && this.isShowSubMenus?'move-left':'move-right'
+            },
             isShowSubMenus: function () {
                 return fnMenu.hasChild(this.activeMenu.child);
             }
         },
         watch     : {
+            isSidebarFull(){
+                let that = this;
+                // this.$nextTick(()=>{
+                //     setTimeout(function(){
+                //         that.broadcaseTable();
+                //     },300);
+                // });
+            },
+            isSidebarSubMenuFull(){
+                let that = this;
+                // this.$nextTick(()=>{
+                //     setTimeout(function(){
+                //         that.broadcaseTable();
+                //     },300);
+                // });
+            },
             //监控当前打开的父菜单是否有变化，有变化后重置子菜单栏为打开状态
             activeMenu: function (newVal, oldVal) {
                 if (newVal != oldVal) {
@@ -109,14 +131,38 @@
             }
         },
         mounted   : function () {
+            let that = this;
             this.loadHashPage();
             this.setMenuStatus();
             window.addEventListener('hashchange', (event)=> {
                 this.loadHashPage();
                 this.setMenuStatus();
             });
+            // this.$nextTick(()=>{
+            //     setTimeout(function(){
+            //         that.broadcaseTable();
+            //     },300);
+            // });
         },
         methods   : {
+            afterAppear(...data){
+                console.log('appear',data);
+            },
+            afterLeave(...data){
+                console.log('leave',data);
+            },
+            afterEnter(...data){
+                console.log('enter',data);
+            },
+            broadcaseTable(){
+                if( document.createEvent) { 
+                    var event = document.createEvent ("HTMLEvents"); 
+                    event.initEvent("resize", true, true); 
+                    window.dispatchEvent(event); 
+                } else if(document.createEventObject){ 
+                    window.fireEvent("onresize"); 
+                } 
+            },
             //提供对外方法，手工设置菜单数据
             setMenus: function (menus) {
                 this.menus = menus;

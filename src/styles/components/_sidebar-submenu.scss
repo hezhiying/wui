@@ -10,7 +10,7 @@
     bottom: 0px;
     z-index: 2;
     overflow: hidden;
-    @include transition(all 0.2s ease);
+    //@include transition(all 0.2s ease);
 
     @at-root .app-product-navbar-full & {
       width: 180px;
@@ -113,7 +113,7 @@
     width: 20px;
     height: 50px;
     z-index: 103;
-    @include transition(all 0.2s ease);
+    //@include transition(all 0.2s ease);
     box-sizing: border-box;
 
     .wula-collapse-inner {
