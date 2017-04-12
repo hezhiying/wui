@@ -19,10 +19,7 @@
     <Table :columns="columns" :data="items" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch">
         <div class="page-footer" slot="footer">
             <div class="page-footer-left">
-                <slot name="table.footer">
-                    <Button size="small">批量删除</Button>
-                    <Button size="small">批量转移</Button>
-                    <Button size="small">审核</Button>
+                <slot name="actions">
                 </slot>
             </div>
 
@@ -120,11 +117,12 @@ export default {
                 order:''
             },
             page:{
-                total:100,
+                total:0,
                 current:1,
-                size:15,
-                sizeOpts:[15,20,30,50]
+                size:10,
+                sizeOpts:[5,10,15,20,30,50]
             },
+            permits:{},
             filter:{
                 key:'',
                 value:''
@@ -179,6 +177,12 @@ export default {
                 data:params
             }).json(data=>{
                 this.items = data.items;
+                if(data.page){
+                    this.page = data.page;
+                }
+                if(data.permits){
+                    this.permits = data.permits;
+                }
             })
         },
         sortSearch({column,key,order}){
