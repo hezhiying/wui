@@ -1,7 +1,7 @@
 <template>
     <li :class="{ 'active':isActive,'nav-showchild':isExpand }">
         <a :href="showMenuUrl" :target="menu.target" :class="{ 'active':isActive}" @click="handleOpen"  v-bind="menu.data">
-            <div class="nav-icon" :style="{'margin-left': level*8+'px'}">
+            <div class="nav-icon" :style="{'margin-left': 10+(level)*8+'px'}">
                 <div v-if="hasChild(menu.child)">
                     <i class="fa fa-caret-down" v-if="isExpand"></i>
                     <i class="fa fa-caret-right" v-else></i>
@@ -19,7 +19,7 @@
     </li>
 
 </template>
-<script lang="babel">
+<script>
     import {fnMenu} from '../../utils/fn'
     export default{
         name:'RightMenus',
