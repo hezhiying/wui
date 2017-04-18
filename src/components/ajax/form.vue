@@ -20,9 +20,9 @@
         </slot>
     </Form>
 </template>
-<script lang="babel">
+<script>
     import $ from 'jquery'
-    import {oneOf,handleAjaxResult} from '../../utils/fn'
+    import {oneOf} from '../../utils/fn'
     import ajax from '../../utils/ajax'
 
     export default{
@@ -155,7 +155,6 @@
                     }else if(data.code == 200){
                         this.$emit('on-submit',data);
                     }
-                    handleAjaxResult.call(this,data);
                 }).fail(data=>{
                     this.$Modal.error({
                         title: '错误',

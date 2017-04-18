@@ -27,7 +27,10 @@
 
 
 </template>
-<script lang="babel">
+<style>
+
+</style>
+<script>
     import Dialog from '../dialog'
     import ajax from '../../utils/ajax'
     import {oneOf,handleAjaxResult} from '../../utils/fn'

@@ -10,7 +10,7 @@
     </li>
 </template>
 
-<script lang="babel">
+<script>
     import {fnMenu} from '../../utils/fn'
 
     export default{
