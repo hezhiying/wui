@@ -1,7 +1,9 @@
-#Wula UI
+# Wula UI
 
 >web ui for admin dashboard
-##目录结构
+
+## 目录结构
+
 ```
 wui/
 ├── dist/
@@ -41,7 +43,8 @@ wui/
 └── .webpack.mix.js
 ```
 
-##安装
+## 安装
+
 ```shell
 git clone https://github.com/hezhiying/wui
 cd wui
@@ -49,8 +52,10 @@ git clone https://github.com/hezhiying/iview
 npm install
 npm run dev
 npm run hot
-##open http://localhost:8081/examples
+##open http://localhost:8080/examples
 ```
+>前端脚手架基于laravel-mix
+https://github.com/JeffreyWay/laravel-mix
 
 > 相关资源 
 https://www.iviewui.com/docs/guide/install
