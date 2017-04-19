@@ -1,5 +1,5 @@
 <template>
-<div class="wula-table">
+<div class="wula-table" :class="{'none-border':noneBorder}">
     <Form
             v-if="showForm"
             ref = "serach"
@@ -16,7 +16,7 @@
         </Form-item>
     </Form>
 
-    <Table :columns="columns" :data="items" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch">
+    <Table :columns="columns" :data="items" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch" >
         <div class="page-footer" slot="footer" v-if="page.total">
             <div class="page-footer-left">
                 <slot name="actions">
@@ -56,6 +56,14 @@
 </div>
 </template>
 <style lang="scss">
+    .none-border{
+        .ivu-table-wrapper{
+            border: none!important;
+        }
+        .ivu-table:after{
+            background-color: transparent;
+        }
+    }
     .page-footer{
         padding: 12px 0;
         overflow: hidden;
@@ -68,12 +76,9 @@
         }
     }
 </style>
-<script lang="babel">
+<script>
 import $ from 'jquery'
-import {
-    oneOf,
-    handleAjaxResult
-} from '../../utils/fn'
+import {oneOf} from '../../utils/fn'
 import ajax from '../../utils/ajax'
 
 export default {
@@ -82,6 +87,10 @@ export default {
         url: {
             type: String,
             required: true
+        },
+		noneBorder:{
+            type:Boolean,
+            default:false
         },
         method: {
             type: String,

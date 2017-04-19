@@ -3,7 +3,43 @@
 		Table Examples
 	</wula-console-title>
 
-	<wula-ajax-table url="/examples/json/tables.json" :table-data="search" ref="table">
+	<wula-ajax-table url="/examples/json/tables.json" :none-border="true" :table-data="search" ref="table">
+		<template slot="search">
+			<Form-item prop="city" label="城市" :label-width="80" >
+				<i-select v-model="search.forms.city" >
+					<i-option value="beijing">北京市</i-option>
+					<i-option value="shanghai" disabled>上海市</i-option>
+					<i-option value="shenzhen">深圳市</i-option>
+				</i-select>
+			</Form-item>
+			<Form-item prop="date" label="日期" :label-width="55"  label-position="left"  :rules="{required: true}">
+				<Date-picker v-model="search.forms.date" format="yyyy/MM/dd" type="daterange"  placeholder="选择日期">
+				</Date-picker>
+			</Form-item>
+			<Form-item prop="user" label="用户名" :label-width="80" :rules="{required: true}">
+				<i-input type="text" v-model="search.forms.user" placeholder="Username">
+				</i-input>
+			</Form-item>
+		</template>
+		<template slot="search-extra">
+			<Form-item prop="city" label="城市" :label-width="55" >
+				<i-select v-model="search.forms.city" >
+					<i-option value="beijing">北京市</i-option>
+					<i-option value="shanghai" disabled>上海市</i-option>
+					<i-option value="shenzhen">深圳市</i-option>
+				</i-select>
+			</Form-item>
+			<Form-item prop="date" label="日期" :label-width="55"  label-position="left"  :rules="{required: true}">
+				<Date-picker v-model="search.forms.date" format="yyyy/MM/dd" type="daterange"  placeholder="选择日期">
+				</Date-picker>
+			</Form-item>
+			<Form-item prop="user" label="用户名" :label-width="55" >
+				<i-input type="text" v-model="search.forms.user" placeholder="Username">
+				</i-input>
+			</Form-item>
+		</template>
+	</wula-ajax-table>
+	<wula-ajax-table url="/examples/json/tables.json" class="margin-top-24" :table-data="search" ref="table">
 		<template slot="search">
 			<Form-item prop="city" label="城市" :label-width="80" >
 				<i-select v-model="search.forms.city" >
@@ -54,12 +90,12 @@
 				},{
 					title: '姓名',
 					key: 'name',
-					// fixed:'left',
+//					 fixed:'left',
 					width: 100
 				},
 					{
 						title: '年龄',
-						width: 120,
+//						width: 120,
 						key: 'age',
 						sortable:'custom',
 						filters: [
@@ -84,8 +120,8 @@
 					{
 						title: '地址',
 						sortable:'custom',
-						width: 'auto',
-// width: 220,
+//						width: 'auto',
+ width: 220,
 						key: 'address',
 						filters: [
                             {
@@ -104,13 +140,13 @@
 					},
 					{
 						title: '地址',
-						width: 'auto',
+//						width: 'auto',
 // width: 220,
 						key: 'a'
 					},
 					{
 						title: '地址',
-						width: 'auto',
+//						width: 'auto',
 // width: 220,
 						key: 'b'
 
@@ -118,7 +154,7 @@
 					{
 						title: '操作',
 						key: 'action',
-						// width: 220,
+						 width: 220,
 						// fixed:'right',
 						render:function (row,column) {
 							return `<i-button type="text" size="small" @click="view(row,column,row._index)">查看</i-button><wula-ajax-button type="text" url="/examples/components/dialog/html.html" dialog>click me</wula-ajax-button>`;
