@@ -181,7 +181,7 @@
 				})
 			},
 			view:function(row,colum,index){
-				let page = this.$refs['table'].page;
+				var page = this.$refs['table'].page;
 				console.log(row,colum,index,page)
 				this.$Message.info(colum.key);
 			},
