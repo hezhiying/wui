@@ -40,7 +40,7 @@ $.ajaxSetup({
     complete(jqXHR, textStatus) { }
 });
 
-var ajaxObj = function (method, url, params, opts) {
+let ajaxObj = function (method, url, params, opts) {
     this.vm = opts.vm || null;
     this.responseJson = {};
     this.opts = Object.assign({}, {
@@ -193,10 +193,8 @@ ajaxObj.prototype.json = function (cb = null) {
             } else {
                 this.handleMsg[this.msgType()].call(this);
             }
-
-        } else {
-            console.warn('json格式不正确');
         }
+
     }).done(data => {
         if (cb) {
             cb.call(this, data);

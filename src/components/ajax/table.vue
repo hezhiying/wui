@@ -224,7 +224,11 @@ export default {
         },
         selectAll(){
             this.$refs.table.selectAll(true);
+        },
+        deleteRow(index){
+        	this.items.splice(index,1);
         }
+
 
     },
     components: {}

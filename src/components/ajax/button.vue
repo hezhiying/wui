@@ -5,7 +5,7 @@
                 :type="type"
                 :shape="shape"
                 :size="size"
-                :loading="loading"
+                :loading="loading && showLoading"
                 :disabled="disabled"
                 :html-type="htmlType"
                 :icon="icon"
@@ -38,7 +38,7 @@
         name:'AjaxButton',
         props: {
             callback:{
-
+				type: Function
             },
             type: {
                 validator (value) {
@@ -91,6 +91,10 @@
             dialogData:{
                 type:Object,
                 default(){return {}}
+            },
+            showLoading:{
+            	type:Boolean,
+                default:true
             }
         },
         data(){
@@ -111,7 +115,11 @@
                         url     : this.url,
                         dataType: 'json',
                         method  : this.method
-                    }).json().always(data=>{this.loading = false})
+                    }).json((responseJson)=>{
+                    	if(responseJson.code === 200 && typeof that.callback === 'function'){
+                    		that.callback.call(that.$parent);
+                        }
+                    }).always(data=>{this.loading = false})
 
                 }
 
