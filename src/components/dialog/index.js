@@ -72,6 +72,11 @@ let dialogObj = function(properties) {
             setContent(content) {
                 let dID = "#dialog-body-" + dIndex;
                 $(dID).html(content)
+                let dialogTitle = $(dID).find("#dialog-title").html();
+                if(dialogTitle){
+                    this.title = dialogTitle;
+                    $(dID).find("#dialog-title").remove();
+                }
                 if (!$(dID).find("script").html()) {
                     /**
                      * 如果没有脚本自动加上vue初始化

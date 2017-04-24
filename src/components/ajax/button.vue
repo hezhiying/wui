@@ -33,39 +33,12 @@
 <script>
     import Dialog from '../dialog'
     import ajax from '../../utils/ajax'
-    import {oneOf,handleAjaxResult} from '../../utils/fn'
+    import {oneOf} from '../../utils/fn'
     export default{
         name:'AjaxButton',
         props: {
             callback:{
 				type: Function
-            },
-            type: {
-                validator (value) {
-                    return oneOf(value, ['primary', 'ghost', 'dashed', 'text', 'info', 'success', 'warning', 'error']);
-                }
-            },
-            shape: {
-                validator (value) {
-                    return oneOf(value, ['circle', 'circle-outline']);
-                }
-            },
-            size: {
-                validator (value) {
-                    return oneOf(value, ['small', 'large']);
-                }
-            },
-            disabled: Boolean,
-            htmlType: {
-                default: 'button',
-                validator (value) {
-                    return oneOf(value, ['button', 'submit', 'reset']);
-                }
-            },
-            icon: String,
-            long: {
-                type: Boolean,
-                default: false
             },
             method:{
                 default: 'get',
@@ -83,38 +56,52 @@
             params:{
                 type:Object
             },
-            placement:String,
             dialog:{
-                type:Boolean,
+                type:[Boolean,Object],
                 default:false
-            },
-            dialogData:{
-                type:Object,
-                default(){return {}}
             },
             showLoading:{
             	type:Boolean,
                 default:true
-            }
+            },
+            //poptip组件
+            placement:String,
+
+            //button组件
+            type:String,	//按钮类型，可选值为primary、ghost、dashed、text、info、success、warning、error或者不设置	String	-
+            size:String,	//按钮大小，可选值为large和small或者不设置	String	-
+            shape:String,	//按钮形状，可选值为circle或者不设置	String	-
+            long:Boolean,	//开启后，按钮的长度为 100%	Boolean	false
+            htmlType:String,	//设置button原生的type，可选值为button、submit、reset	String	button
+            disabled:Boolean,	//设置按钮为禁用状态	Boolean	false
+            icon:String,
         },
         data(){
             return{
                 loading:false
             }
         },
+        created(){
+            console.log(this.$props)
+        },
         methods:{
             handleClick(){
                 let that = this;
+                if ( this.loading ){
+                    return ;
+                }
+
                 if(this.dialog){
                     Dialog.open(Object.assign({
                         url:this.url
-                    },this.dialogData));
+                    },this.dialog));
                 }else{
                     this.loading = true
                     ajax.any({
                         url     : this.url,
                         dataType: 'json',
-                        method  : this.method
+                        method  : this.method,
+                        data    : this.params
                     }).json((responseJson)=>{
                     	if(responseJson.code === 200 && typeof that.callback === 'function'){
                     		that.callback.call(that.$parent);

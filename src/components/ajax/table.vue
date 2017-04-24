@@ -58,7 +58,7 @@
 <style lang="scss">
     .none-border{
         .ivu-table-wrapper{
-            border: none!important;
+            border-left: 0;
         }
         .ivu-table:after{
             background-color: transparent;

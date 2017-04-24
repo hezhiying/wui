@@ -46,10 +46,11 @@ mix.less('./src/styles/my-iview.less', './test/', {
     .styles(['test/my-iview.css', 'test/index.css'], `dist/styles/${outStyleFilename}`);
 
 
-mix.js('./src/main.js', `test/main.js`);
 if (mix.config.inProduction) {
+    mix.js('./src/main.js', `test/main.js`);
     mix.scripts(['./node_modules/vue/dist/vue.min.js', './node_modules/jquery/dist/jquery.min.js', `test/main.js`], `dist/${outScriptFilename}`);
 } else {
+    mix.js('./src/main.js', `test/main.js`).sourceMaps();
     mix.scripts(['./node_modules/vue/dist/vue.js', './node_modules/jquery/dist/jquery.js', `test/main.js`], `dist/${outScriptFilename}`);
 }
 if (mix.config.inProduction) {

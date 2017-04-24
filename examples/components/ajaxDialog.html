@@ -12,12 +12,12 @@
 			<p>直接以Dialog方式加载Ajax链接</p>
 			<wula-ajax-button type="primary" url="/examples/components/dialog/html.html" dialog>click me</wula-ajax-button>
 			<br><br>
-			<wula-ajax-button url="/examples/components/dialog/html.html" dialog :dialog-data="{title:'这是标题'}">有标题</wula-ajax-button>
+			<wula-ajax-button url="/examples/components/dialog/html.html" :dialog="{title:'这是标题'}">有标题</wula-ajax-button>
 			<br><br>
-			<wula-ajax-button  url="/examples/components/dialog/html.html" dialog :dialog-data="{title:'我没有默认的确定按钮',showOk:false}">有标题</wula-ajax-button>
+			<wula-ajax-button  url="/examples/components/dialog/html.html" :dialog="{title:'我没有默认的确定按钮',showOk:false}">有标题</wula-ajax-button>
 			<br><br>
-			<wula-ajax-button  url="/examples/components/dialog/dialog-form.html" dialog :dialog-data="{title:'a new form dialog',showOk:false}">form</wula-ajax-button>
-			<wula-ajax-button  url="/examples/components/dialog/dialog-form-fail.html" dialog :dialog-data="{title:'a new form dialog',showOk:false}">form-fail</wula-ajax-button>
+			<wula-ajax-button  url="/examples/components/dialog/dialog-form.html" :dialog="{title:'a new form dialog',showOk:false}">form</wula-ajax-button>
+			<wula-ajax-button  url="/examples/components/dialog/dialog-form-fail.html" :dialog="{title:'a new form dialog',showOk:false}">form-fail</wula-ajax-button>
 
 		</div>
 		<div slot="description">

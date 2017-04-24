@@ -1,6 +1,13 @@
 {
   "sidebar": [
 	{
+	  "name":"设置",
+	  "child":[{
+		"name":"demo",
+		"url":"#/examples/demo.html"
+	  }]
+	},
+	{
 	  "name": "\u7cfb\u7edf\u8bbe\u7f6e",
 	  "child": [
 		{
@@ -88,7 +95,7 @@
 		}
 	  ]
 	},
-	{"name":"","child":[
+	{"child":[
 	  {
 		"name":"帮助文档",
 		"icon":"fa fa-envira",

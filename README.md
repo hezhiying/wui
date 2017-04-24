@@ -132,3 +132,7 @@ new Vue({
     })
     
 ```
+
+## 组件列表
+
+- [ajax-button](docs/ajax-button.md)
