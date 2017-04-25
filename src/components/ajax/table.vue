@@ -185,7 +185,8 @@ export default {
                 url     : this.url,
                 dataType: 'json',
                 method  : this.method,
-                data:params
+                data:params,
+                loaderObject:this
             }).json(data=>{
                 this.items = data.items;
                 if(data.page){
@@ -214,6 +215,9 @@ export default {
         handlePage(page){
             this.page.current = page;
             this.getData();
+        },
+        reload(){
+            this.handlePage(1);
         },
         filterRemote(value, key,column){
             this.filter.key = key;

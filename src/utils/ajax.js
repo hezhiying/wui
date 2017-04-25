@@ -122,7 +122,7 @@ ajaxObj.prototype.handleAction = {
         let data = this.responseJson;
         let target = data.target || '';
         if (target) {
-            let loader = $(target).data('reloadObject');
+            let loader = this.loaderObject;
             if (loader && typeof loader.reload == 'function') {
                 loader.reload();
             }
