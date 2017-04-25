@@ -16,7 +16,7 @@
         </Form-item>
     </Form>
 
-    <Table :columns="columns" :data="items" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch" >
+    <Table :columns="columns" :data="items" :is-group="isGroup" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch" >
         <div class="page-footer" slot="footer" v-if="page.total">
             <div class="page-footer-left">
                 <slot name="actions">
@@ -114,6 +114,10 @@ export default {
             type: Boolean,
             default: true
         },
+        isGroup:{
+            type: Boolean,
+            default: false
+        }
     },
     data() {
         return {

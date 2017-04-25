@@ -1,0 +1,38 @@
+{
+    "items": [{
+            "name": "王小明",
+            "age": 18,
+            "group": 1
+        },
+        {
+            "name": "张小刚",
+            "age": 25,
+            "parent": 1
+        },
+        {
+            "name": "李小红",
+            "age": 30,
+            "parent": 1
+        },
+        {
+            "name": "周小伟",
+            "age": 26,
+            "group": 2
+        },
+        {
+            "name": "周小伟",
+            "age": 26,
+            "parent": 2
+        },
+        {
+            "name": "周小伟",
+            "age": 26,
+            "parent": 2
+        },
+        {
+            "name": "周小伟",
+            "age": 26,
+            "parent": 2
+        }
+    ]
+}

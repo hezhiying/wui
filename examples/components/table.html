@@ -1,10 +1,10 @@
 <div id="page-table">
-	<wula-console-title>
-		Table Examples
-	</wula-console-title>
+    <wula-console-title>
+        Table Examples
+    </wula-console-title>
 
-	<wula-ajax-table url="/examples/json/tables.json" :none-border="true" :table-data="search" ref="table1">
-		<template slot="search">
+    <wula-ajax-table url="/examples/json/tables.json" :none-border="true" :table-data="search" ref="table1">
+        <template slot="search">
 			<Form-item prop="city" label="城市" :label-width="80" >
 				<i-select v-model="search.forms.city" >
 					<i-option value="beijing">北京市</i-option>
@@ -21,7 +21,7 @@
 				</i-input>
 			</Form-item>
 		</template>
-		<template slot="search-extra">
+        <template slot="search-extra">
 			<Form-item prop="city" label="城市" :label-width="55" >
 				<i-select v-model="search.forms.city" >
 					<i-option value="beijing">北京市</i-option>
@@ -38,9 +38,9 @@
 				</i-input>
 			</Form-item>
 		</template>
-	</wula-ajax-table>
-	<wula-ajax-table url="/examples/json/tables.json" class="margin-top-24" :table-data="search2" ref="table">
-		<template slot="search">
+    </wula-ajax-table>
+    <wula-ajax-table url="/examples/json/tables.json" class="margin-top-24" :table-data="search2" ref="table">
+        <template slot="search">
 			<Form-item prop="city" label="城市" :label-width="80" >
 				<i-select v-model="search.forms.city" >
 					<i-option value="beijing">北京市</i-option>
@@ -57,7 +57,7 @@
 				</i-input>
 			</Form-item>
 		</template>
-		<template slot="search-extra">
+        <template slot="search-extra">
 			<Form-item prop="city" label="城市" :label-width="55" >
 				<i-select v-model="search.forms.city" >
 					<i-option value="beijing">北京市</i-option>
@@ -74,212 +74,205 @@
 				</i-input>
 			</Form-item>
 		</template>
-	</wula-ajax-table>
-<i-button v-ajax:json:html:ff.get.put='1'>按钮</i-button>
+    </wula-ajax-table>
+    <wula-ajax-table :is-group="true" url="/examples/json/tables-group.json" class="margin-top-24" :table-data="group">
+
+    </wula-ajax-table>
 </div>
 
 <script>
-	var t = new Vue({
-		el: '#page-table',
-		data: {
-			search:{
-				columns:[{
-					type: 'selection',
-					width: 60,
-					align: 'center'
-				},{
-					title: '姓名',
-					key: 'name',
-//					 fixed:'left',
-					width: 100
-				},
-					{
-						title: '年龄',
-//						width: 120,
-						key: 'age',
-						sortable:'custom',
-						filters: [
-                            {
-                                label: '电脑',
-                                value: '电脑'
-                            },
-                            {
-                                label: '手机',
-                                value: '手机'
-                            },
-                            {
-                                label: '电视机',
-                                value: '电视机'
-                            }
-                        ],
-						filterMultiple:false,
-						filterRemote:function(value,key,column){
-							this.$parent.filter(value,key,column);
-						}
-					},
-					{
-						title: '地址',
-						sortable:'custom',
-//						width: 'auto',
- width: 220,
-						key: 'address',
-						filters: [
-                            {
-                                label: '北京',
-                                value: '北京'
-                            },
-                            {
-                                label: '上海',
-                                value: '上海'
-                            },
-                            {
-                                label: '深圳',
-                                value: '深圳'
-                            }
-                        ]
-					},
-					{
-						title: '地址',
-//						width: 'auto',
-// width: 220,
-						key: 'a'
-					},
-					{
-						title: '地址',
-//						width: 'auto',
-// width: 220,
-						key: 'b'
+    var t = new Vue({
+        el: '#page-table',
+        data: {
+            search: {
+                columns: [{
+                    type: 'selection',
+                    width: 60,
+                    align: 'center'
+                }, {
+                    title: '姓名',
+                    key: 'name',
+                    //					 fixed:'left',
+                    width: 100
+                }, {
+                    title: '年龄',
+                    //						width: 120,
+                    key: 'age',
+                    sortable: 'custom',
+                    filters: [{
+                        label: '电脑',
+                        value: '电脑'
+                    }, {
+                        label: '手机',
+                        value: '手机'
+                    }, {
+                        label: '电视机',
+                        value: '电视机'
+                    }],
+                    filterMultiple: false,
+                    filterRemote: function(value, key, column) {
+                        this.$parent.filter(value, key, column);
+                    }
+                }, {
+                    title: '地址',
+                    sortable: 'custom',
+                    //						width: 'auto',
+                    width: 220,
+                    key: 'address',
+                    filters: [{
+                        label: '北京',
+                        value: '北京'
+                    }, {
+                        label: '上海',
+                        value: '上海'
+                    }, {
+                        label: '深圳',
+                        value: '深圳'
+                    }]
+                }, {
+                    title: '地址',
+                    //						width: 'auto',
+                    // width: 220,
+                    key: 'a'
+                }, {
+                    title: '地址',
+                    //						width: 'auto',
+                    // width: 220,
+                    key: 'b'
 
-					},
-					{
-						title: '操作',
-						key: 'action',
-						 width: 250,
-						// fixed:'right',
-						render:function (row,column,index) {
-							return `<wula-ajax-button url="/examples/json/notice.json" size="small"  :callback="function(){this.ajaxTableVM.deleteRow(${index})}">删除</wula-ajax-button><i-button type="text" size="small" @click="view(row,column,row._index)" >查看</i-button><wula-ajax-button type="text" url="/examples/components/dialog/html.html" dialog>click me</wula-ajax-button>`;
-						}
-					}],
-				forms:{
-					date:[],
-					date2:[],
-					user:'',
-					address:'',
-					city:''
-				},
-				rules:{}
-			},
-			search2:{
-				columns:[{
-					type: 'selection',
-					width: 60,
-					align: 'center'
-				},{
-					title: '姓名',
-					key: 'name',
-//					 fixed:'left',
-					width: 100
-				},
-					{
-						title: '年龄',
-//						width: 120,
-						key: 'age',
-						sortable:'custom',
-						filters: [
-                            {
-                                label: '电脑',
-                                value: '电脑'
-                            },
-                            {
-                                label: '手机',
-                                value: '手机'
-                            },
-                            {
-                                label: '电视机',
-                                value: '电视机'
-                            }
-                        ],
-						filterMultiple:false,
-						filterRemote:function(value,key,column){
-							this.filter(value,key,column);
-						}
-					},
-					{
-						title: '地址',
-						sortable:'custom',
-//						width: 'auto',
- width: 220,
-						key: 'address',
-						filters: [
-                            {
-                                label: '北京',
-                                value: '北京'
-                            },
-                            {
-                                label: '上海',
-                                value: '上海'
-                            },
-                            {
-                                label: '深圳',
-                                value: '深圳'
-                            }
-                        ]
-					},
-					{
-						title: '地址',
-//						width: 'auto',
-// width: 220,
-						key: 'a'
-					},
-					{
-						title: '地址',
-//						width: 'auto',
-// width: 220,
-						key: 'b'
+                }, {
+                    title: '操作',
+                    key: 'action',
+                    width: 250,
+                    // fixed:'right',
+                    render: function(row, column, index) {
+                        return `<wula-ajax-button url=" /examples/json/notice.json " size="small"  :callback="function(){this.ajaxTableVM.deleteRow(${index})} ">删除</wula-ajax-button><i-button type="text" size="small" @click="view(row,column,row._index)
+        " >查看</i-button><wula-ajax-button type="text" url="/examples/components/dialog/html.html" dialog>click me</wula-ajax-button>`;
+                    }
+                }],
+                forms: {
+                    date: [],
+                    date2: [],
+                    user: '',
+                    address: '',
+                    city: ''
+                },
+                rules: {}
+            },
+            search2: {
+                columns: [{
+                    type: 'selection',
+                    width: 60,
+                    align: 'center'
+                }, {
+                    title: '姓名',
+                    key: 'name',
+                    //					 fixed:'left',
+                    width: 100
+                }, {
+                    title: '年龄',
+                    //						width: 120,
+                    key: 'age',
+                    sortable: 'custom',
+                    filters: [{
+                        label: '电脑',
+                        value: '电脑'
+                    }, {
+                        label: '手机',
+                        value: '手机'
+                    }, {
+                        label: '电视机',
+                        value: '电视机'
+                    }],
+                    filterMultiple: false,
+                    filterRemote: function(value, key, column) {
+                        this.filter(value, key, column);
+                    }
+                }, {
+                    title: '地址',
+                    sortable: 'custom',
+                    //						width: 'auto',
+                    width: 220,
+                    key: 'address',
+                    filters: [{
+                        label: '北京',
+                        value: '北京'
+                    }, {
+                        label: '上海',
+                        value: '上海'
+                    }, {
+                        label: '深圳',
+                        value: '深圳'
+                    }]
+                }, {
+                    title: '地址',
+                    //						width: 'auto',
+                    // width: 220,
+                    key: 'a'
+                }, {
+                    title: '地址',
+                    //						width: 'auto',
+                    // width: 220,
+                    key: 'b'
 
-					},
-					{
-						title: '操作',
-						key: 'action',
-						 width: 230,
-						// fixed:'right',
-						render:function (row,column,index) {
-							return `<wula-ajax-button url="/examples/json/notice.json" size="small" :callback="function(){this.ajaxTableVM.deleteRow(${index})}">删除</wula-ajax-button><i-button type="text" size="small" @click="view(row,column,row._index)" >查看</i-button><wula-ajax-button type="text"  url="/examples/json/notice.json" size="small" :callback="function(){this.ajaxTableVM.deleteRow(${index})}">click me</wula-ajax-button>`;
-						}
-					}],
-				forms:{
-					date:[],
-					date2:[],
-					user:'',
-					address:'',
-					city:''
-				},
-				rules:{}
-			},
-		},
-		methods:{
-			submit:function () {
-				this.$refs.ajaxForm.validate((valid) => {
-					if (valid) {
-						this.$Message.success('提交成功');
-					} else {
-						this.$Message.error('表单验证失败!');
-					}
-				})
-			},
-			view:function(row,colum,index){
-				var that=this;
-				this.$refs.table1.deleteRow(index)
-				var page = this.$refs['table'].page;
-//				this.$refs.table1.handlePage(1);
+                }, {
+                    title: '操作',
+                    key: 'action',
+                    width: 230,
+                    // fixed:'right',
+                    render: function(row, column, index) {
+                        return `<wula-ajax-button url="/examples/json/notice.json " size="small" :callback="function(){this.ajaxTableVM.deleteRow(${index})} ">删除</wula-ajax-button><i-button type="text" size="small" @click="view(row,column,row._index)
+        " >查看</i-button><wula-ajax-button type="text"  url="/examples/json/notice.json " size="small" :callback="function(){this.ajaxTableVM.deleteRow(${index})} ">click me</wula-ajax-button>`;
+                    }
+                }],
+                forms: {
+                    date: [],
+                    date2: [],
+                    user: '',
+                    address: '',
+                    city: ''
+                },
+                rules: {}
+            },
+            group: {
+                columns: [{
+                    type: 'group',
+                    width: 45,
+                    key: 'group'
+                }, {
+                    key: 'name',
+                    title: '姓名'
+                }, {
+                    key: 'age',
+                    title: '年龄',
+                    width: 120
+                }],
+                rules: {},
+                forms: {}
+            }
+        },
+        methods: {
+            submit: function() {
+                this.$refs.ajaxForm.validate((valid) => {
+                    if (valid) {
+                        this.$Message.success('提交成功');
+                    } else {
+                        this.$Message.error('表单验证失败!');
+                    }
+                })
+            },
+            view: function(row, colum, index) {
+                var that = this;
+                this.$refs.table1.deleteRow(index)
+                var page = this.$refs['table'].page;
+                //				this.$refs.table1.handlePage(1);
 
-				console.log(row,colum,index,page)
-				this.$Message.info(colum.key);
-			},
-			filter:function(value,key,column){
-				console.log(value,key,column)
-			}
-		}
-	})
-
+                console.log(row, colum, index, page)
+                this.$Message.info(colum.key);
+            },
+            filter: function(value, key, column) {
+                console.log(value, key, column)
+            }
+        }
+    })
 </script>
