@@ -27,20 +27,20 @@ $.ajaxSetup({
         Loading.error();
         let ajaxRedirect = jqXHR.getResponseHeader('X-AJAX-REDIRECT')
         let ajaxMsg = jqXHR.getResponseHeader('X-AJAX-MESSAGE')
-        if(ajaxMsg){
-            Notice.error({title:ajaxMsg})
+        if (ajaxMsg) {
+            Notice.error({ title: ajaxMsg })
         }
-        if(ajaxRedirect){
+        if (ajaxRedirect) {
             location.href = ajaxRedirect;
             return;
         }
 
     },
     //jqXHR jqXHR, String textStatus
-    complete(jqXHR, textStatus) { }
+    complete(jqXHR, textStatus) {}
 });
 
-let ajaxObj = function (method, url, params, opts) {
+let ajaxObj = function(method, url, params, opts) {
     this.vm = opts.vm || null;
     this.responseJson = {};
     this.opts = Object.assign({}, {
@@ -66,7 +66,7 @@ ajaxObj.prototype.handleAction = {
     },
     redirect(targetUrl = null) {
         targetUrl = targetUrl ? targetUrl : this.responseJson.target;
-        this.handleMsg[this.msgType()].call(this, function () {
+        this.handleMsg[this.msgType()].call(this, function() {
             if (targetUrl) {
                 if (targetUrl.startsWith('#')) {
                     window.location.hash = targetUrl;
@@ -87,9 +87,58 @@ ajaxObj.prototype.handleAction = {
             url: data.ajax || ''
         }
         let that = this;
-        this.handleMsg[this.msgType()].call(this, function () {
+        this.handleMsg[this.msgType()].call(this, function() {
             that.dialog = Dialog.open(dialogConfig);
         })
+    },
+    click() {
+        let data = this.responseJson;
+        let target = data.target || '';
+        if (target) {
+            $(target).click();
+        }
+    },
+    callback() {
+        let data = this.responseJson;
+        let target = data.target || '';
+        let args = data.args || {};
+        if (typeof target == 'function') {
+            target.call(args, args);
+        }
+    },
+    update() {
+        let data = this.responseJson;
+        let target = data.target || '';
+        let args = data.args || {};
+        if (target && args && args.content) {
+            if (args.append) {
+                $(target).append(args.content);
+            } else {
+                $(target).html(args.content);
+            }
+        }
+    },
+    reload() {
+        let data = this.responseJson;
+        let target = data.target || '';
+        if (target) {
+            let loader = $(target).data('reloadObject');
+            if (loader && typeof loader.reload == 'function') {
+                loader.reload();
+            }
+        } else {
+            window.location.reload();
+        }
+    },
+    script() {
+        let data = this.responseJson;
+        let target = data.target || '';
+        if (target) {
+            try {
+                var f = new Function(target);
+                f.apply(window, [$, Message, Notice, Modal]);
+            } catch (e) {}
+        }
     }
 }
 ajaxObj.prototype.handleMsg = {
@@ -132,7 +181,7 @@ ajaxObj.prototype.handleMsg = {
             content: this.msgContent(),
             loading: false,
             onOk: () => {
-                if (typeof (cb) == "function") {
+                if (typeof(cb) == "function") {
                     cb(true);
                 }
             }
@@ -140,10 +189,10 @@ ajaxObj.prototype.handleMsg = {
     }
 }
 
-ajaxObj.prototype.msgType = function () {
+ajaxObj.prototype.msgType = function() {
     return this.responseJson.style || 'message';
 }
-ajaxObj.prototype.msgTextStatus = function () {
+ajaxObj.prototype.msgTextStatus = function() {
     let code = this.responseJson.code || '200';
     let codeType;
     switch (code.toString().substring(0, 1)) {
@@ -163,10 +212,10 @@ ajaxObj.prototype.msgTextStatus = function () {
     }
     return codeType;
 };
-ajaxObj.prototype.msgContent = function () {
+ajaxObj.prototype.msgContent = function() {
     return this.responseJson.message || '';
 };
-ajaxObj.prototype.msgTitle = function () {
+ajaxObj.prototype.msgTitle = function() {
     let title = '';
     let msgTextStatus = this.msgTextStatus();
     if (msgTextStatus == 'success') {
@@ -182,7 +231,7 @@ ajaxObj.prototype.msgTitle = function () {
 };
 
 
-ajaxObj.prototype.json = function (cb = null) {
+ajaxObj.prototype.json = function(cb = null) {
     this.opts.dataType = 'json';
     return $.ajax(this.opts).done(data => {
         if (typeof data.code == 'number' || typeof data.code == 'string') {
@@ -217,7 +266,7 @@ ajaxObj.prototype.json = function (cb = null) {
     });
 };
 
-ajaxObj.prototype.html = function (cb) {
+ajaxObj.prototype.html = function(cb) {
     this.opts.dataType = 'html';
     return $.ajax(this.opts).done(cb);
 };
