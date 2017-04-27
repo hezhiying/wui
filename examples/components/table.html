@@ -75,7 +75,7 @@
 			</Form-item>
 		</template>
     </wula-ajax-table>
-    <wula-ajax-table :is-group="true" url="/examples/json/tables-group.json" class="margin-top-24" :table-data="group">
+    <wula-ajax-table :is-group="true" :is-ajax="false" url="/examples/json/tables-group.json" class="margin-top-24" :table-data="group">
 
     </wula-ajax-table>
 </div>
@@ -245,7 +245,23 @@
                 }, {
                     key: 'age',
                     title: '年龄',
-                    width: 120
+                    sortable: true,
+                    width: 120,
+                    filters: [{
+                        label: '大于25岁',
+                        value: 1
+                    }, {
+                        label: '小于25岁',
+                        value: 2
+                    }],
+                    filterMultiple: false,
+                    filterMethod(value, row) {
+                        if (value === 1) {
+                            return row.age > 25;
+                        } else if (value === 2) {
+                            return row.age < 25;
+                        }
+                    }
                 }],
                 rules: {},
                 forms: {}

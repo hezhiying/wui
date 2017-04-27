@@ -16,7 +16,7 @@
         </Form-item>
     </Form>
 
-    <Table :columns="columns" :data="items" :is-group="isGroup" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch" >
+    <Table :columns="columns" :data="items" :is-group="isGroup" :is-ajax="isAjax" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch" >
         <div class="page-footer" slot="footer" v-if="page.total">
             <div class="page-footer-left">
                 <slot name="actions">
@@ -117,6 +117,10 @@ export default {
         isGroup:{
             type: Boolean,
             default: false
+        },
+        isAjax:{
+            type: Boolean,
+            default: true
         }
     },
     data() {
@@ -164,10 +168,10 @@ export default {
             let columns = this.tableData.columns;
             columns.map(column=>{
                 if(column.filters){
-                    if(!column.filterRemote )
+                    if(!column.filterMethod)
                     {
                         column.filterRemote = function(value, key,column){
-                        this.filterRemote(value, key,column)
+                            this.filterRemote(value, key,column)
                         }
                     }
                 }
@@ -228,7 +232,6 @@ export default {
             this.filter.value = value.join(',');
             this.page.current = 1;
             this.getData();
-
         },
         selectAll(){
             this.$refs.table.selectAll(true);
@@ -236,8 +239,6 @@ export default {
         deleteRow(index){
         	this.items.splice(index,1);
         }
-
-
     },
     components: {}
 }
