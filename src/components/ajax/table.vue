@@ -206,10 +206,12 @@ export default {
             })
         },
         sortSearch({column,key,order}){
-            this.sortOrder.field = order=="normal"?"": key;
-            this.sortOrder.order= order=="normal"?"":order;
-            this.page.current = 1;
-            this.getData();
+            if(this.isAjax){
+                this.sortOrder.field = order=="normal"?"": key;
+                this.sortOrder.order= order=="normal"?"":order;
+                this.page.current = 1;
+                this.getData();
+            }
         },
         search(ref){
             this.$refs[ref].validate((valid) => {
