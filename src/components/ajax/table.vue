@@ -16,7 +16,7 @@
         </Form-item>
     </Form>
 
-    <Table :columns="columns" :data="items" :is-group="isGroup" :is-ajax="isAjax" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch" >
+    <Table :columns="columns" :data="items" :is-group="isGroup" :is-ajax="isAjax" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch" @on-row-click="onRowClick" :no-data-text="noDataText" :no-filtered-data-text="noFilteredDataText">
         <div class="page-footer" slot="footer" v-if="page.total">
             <div class="page-footer-left">
                 <slot name="actions">
@@ -121,6 +121,12 @@ export default {
         isAjax:{
             type: Boolean,
             default: true
+        },
+        noDataText: {
+            type: String
+        },
+        noFilteredDataText: {
+            type: String
         }
     },
     data() {
@@ -158,12 +164,16 @@ export default {
         this.showForm = this.$slots['search'] !== undefined;
         this.showRightBar = this.$slots['search-extra'] !== undefined;
         this.getData();
-
     },
     mounted(){
         this.cloneColumns();
     },
     methods: {
+        onRowClick(row){
+            if(typeof this.$parent.onRowClick == 'function'){
+                this.$parent.onRowClick(row);
+            }
+        },
         cloneColumns(){
             let columns = this.tableData.columns;
             columns.map(column=>{
