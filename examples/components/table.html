@@ -75,7 +75,7 @@
 			</Form-item>
 		</template>
     </wula-ajax-table>
-    <wula-ajax-table :is-group="true" :is-ajax="false" url="/examples/json/tables-group.json" class="margin-top-24" :table-data="group">
+    <wula-ajax-table :is-group="true" :is-ajax="false" url="/examples/json/tables-group.json" class="margin-top-24" :table-data="group" @on-row-click="clickMe">
 
     </wula-ajax-table>
 </div>
@@ -268,6 +268,9 @@
             }
         },
         methods: {
+            clickMe: function(row) {
+                console.log(row);
+            },
             submit: function() {
                 this.$refs.ajaxForm.validate((valid) => {
                     if (valid) {

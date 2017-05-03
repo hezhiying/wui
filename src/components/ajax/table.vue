@@ -16,7 +16,14 @@
         </Form-item>
     </Form>
 
-    <Table :columns="columns" :data="items" :is-group="isGroup" :is-ajax="isAjax" :context="self" ref="table" style="z-index: 0;" @on-sort-change="sortSearch" @on-row-click="onRowClick" :no-data-text="noDataText" :no-filtered-data-text="noFilteredDataText">
+    <Table :columns="columns" :data="items" :is-group="isGroup" :is-ajax="isAjax" :context="self" ref="table" style="z-index: 0;" 
+    @on-sort-change="sortSearch" 
+    @on-row-click="(row)=>this.$emit('on-row-click',row)"
+    @on-select="(selection,row)=>this.$emit('on-select',[selection,row])"
+    @on-selection-change="(selection)=>this.$emit('on-selection-change',selection)"
+    @on-current-change="(currentRow,oldCurrentRow)=>this.$emit('on-current-change',[currentRow,oldCurrentRow])"
+    :no-data-text="noDataText" 
+    :no-filtered-data-text="noFilteredDataText">
         <div class="page-footer" slot="footer" v-if="page.total">
             <div class="page-footer-left">
                 <slot name="actions">
@@ -169,11 +176,6 @@ export default {
         this.cloneColumns();
     },
     methods: {
-        onRowClick(row){
-            if(typeof this.$parent.onRowClick == 'function'){
-                this.$parent.onRowClick(row);
-            }
-        },
         cloneColumns(){
             let columns = this.tableData.columns;
             columns.map(column=>{
