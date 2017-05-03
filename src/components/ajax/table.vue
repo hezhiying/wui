@@ -24,14 +24,15 @@
     @on-current-change="(currentRow,oldCurrentRow)=>this.$emit('on-current-change',[currentRow,oldCurrentRow])"
     :no-data-text="noDataText" 
     :no-filtered-data-text="noFilteredDataText">
-        <div class="page-footer" slot="footer" v-if="page.total">
+        <div class="page-footer" slot="footer" v-show="page.total || isShowActions">
             <div class="page-footer-left">
                 <slot name="actions">
                 </slot>
             </div>
 
-            <div class="page-footer-cell pull-right">
+            <div class="page-footer-cell pull-right" >
                 <Page
+                        v-show="page.total"
                         :total="page.total"
                         size="small"
                         :current="page.current"
@@ -138,6 +139,7 @@ export default {
     },
     data() {
         return {
+            isShowActions:false,
             self:this.$parent,
             rightBarVisible:false,
             loading: false,
@@ -162,14 +164,10 @@ export default {
             showRightBar:false
         }
     },
-    computed:{
-        showFooter(){
-        }
-
-    },
     created() {
         this.showForm = this.$slots['search'] !== undefined;
         this.showRightBar = this.$slots['search-extra'] !== undefined;
+        this.isShowActions = this.$slots['actions'] !== undefined;
         this.getData();
     },
     mounted(){
@@ -209,9 +207,10 @@ export default {
                 loaderObject:this
             }).json(data=>{
                 this.items = data.items;
-                if(data.page){
-                    this.page = data.page;
+                if(data.page && data.page.total){
+                    this.page.total = data.page.total;
                 }
+             
                 if(data.permits){
                     this.permits = data.permits;
                 }

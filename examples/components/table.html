@@ -38,6 +38,7 @@
 				</i-input>
 			</Form-item>
 		</template>
+        <i-button slot="actions">click</i-button>
     </wula-ajax-table>
     <wula-ajax-table url="/examples/json/tables.json" class="margin-top-24" :table-data="search2" ref="table">
         <template slot="search">
@@ -88,7 +89,8 @@
                 columns: [{
                     type: 'selection',
                     width: 60,
-                    align: 'center'
+                    align: 'center',
+                    title:'1'
                 }, {
                     title: '姓名',
                     key: 'name',
@@ -286,11 +288,11 @@
                 var page = this.$refs['table'].page;
                 //				this.$refs.table1.handlePage(1);
 
-                console.log(row, colum, index, page)
+               // console.log(row, colum, index, page)
                 this.$Message.info(colum.key);
             },
             filter: function(value, key, column) {
-                console.log(value, key, column)
+                //console.log(value, key, column)
             }
         }
     })

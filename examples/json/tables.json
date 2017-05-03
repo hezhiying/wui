@@ -1,4 +1,10 @@
 {
+	"page":{
+		"total":0,
+		"current":1,
+		"size":15,
+		"sizeOpts":[5,15,50,100]
+	},
   "items": [
 	{
 	  "name": "王小明",

@@ -14,6 +14,7 @@
 		  "name": "\u7f51\u7ad9\u8bbe\u7f6e",
 		  "url": "#zine\/home\/abc",
 		  "icon": "<i class=\"fa fa-user-md\"><\/i>",
+			"badge":"10+",
 		  "child": []
 		},
 		{
@@ -100,7 +101,7 @@
 		"name":"帮助文档",
 		"icon":"fa fa-envira",
 		"child":[
-		  {"name":"form","url":"#/examples/components/form.html","icon":"fa fa-list-alt"},
+		  {"name":"form","url":"#/examples/components/form.html","icon":"fa fa-list-alt","badge":"10+"},
 		  {"name":"button","url":"#/examples/components/button.html","icon":"fa fa-youtube-play"},
 		  {"name":"table","url":"#/examples/components/table.html","icon":"fa fa-align-justify"},
 		  {"name":"ajaxDialog","url":"#/examples/components/ajaxDialog.html","icon":"fa fa-align-justify"},
@@ -121,6 +122,7 @@
 	  "textCls": "",
 	  "textStyle": "",
 	  "iconStyle": "",
+		"badge":"10+",
 	  "iconCls": "",
 	  "level": 1,
 	  "child": [
@@ -129,6 +131,7 @@
 		  "name": "\u7f51\u7ad9\u8bbe\u7f6e",
 		  "title": "\u7f51\u7ad9\u8bbe\u7f6e",
 		  "url": "#zine\/home\/abc",
+			"badge":"10+",
 		  "icon": "<i class=\"fa fa-user-md\"><\/i>",
 		  "level": 2,
 		  "child": []

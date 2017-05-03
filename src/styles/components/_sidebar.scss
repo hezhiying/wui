@@ -1,4 +1,20 @@
-
+.sidebar-item-badge{
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 9px;
+    color: #fff;
+    background: #ffa200;
+    border-radius: 5px;
+    padding: 2px 5px;
+    display: inline-block;
+    margin-top: 9px;
+    line-height: 16px;
+    vertical-align: top;
+    text-align: center;
+    margin-right: 5px;
+}
 .wula-sidebar {
   width: 50px;
   position: fixed;

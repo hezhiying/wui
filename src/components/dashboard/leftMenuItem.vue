@@ -3,7 +3,11 @@
         <Tooltip :content="tips" placement="right" class="wula-tips" :disabled="sidebarFull">
             <a :href="showMenuUrl" :target="menu.target" @click="openSubMenus" v-bind="menu.data">
                 <span class="sidebar-item-icon" :class="menu.iconCls" :style="menu.iconStyle" v-html="icon"></span>
-                <span class="sidebar-item-title" :class="menu.textCls" :style="menu.textStyle" v-cloak> {{menu.name}} </span>
+                <span class="sidebar-item-title" :class="menu.textCls" :style="menu.textStyle" v-cloak> {{menu.name}} 
+                        <span class="sidebar-item-badge" v-if='menu.badge'>{{menu.badge}}</span>
+
+                </span>
+                
             </a>
         </Tooltip>
 

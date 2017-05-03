@@ -10,6 +10,7 @@
                 <div v-if="!hasChild(menu.child)" :class="menu.iconCls" :style="menu.iconStyle" v-html="returnIcon(menu.icon)"  ></div>
             </div>
             <div class="nav-title" :class="menu.textCls" :style="menu.textStyle">{{ menu.name }}</div>
+            <span class="sidebar-item-badge" v-if='menu.badge'>{{menu.badge}}</span>
         </a>
 
         <ul v-if="hasChild(menu.child)">
