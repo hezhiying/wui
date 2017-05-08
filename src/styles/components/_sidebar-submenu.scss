@@ -1,176 +1,165 @@
 .wula-dashboard-right-sidebar {
-
-  //dashboard right sidebar style
-  .wula-dashboard-right-sidebar-menu {
-    width: 0px;
-    float: left;
-    background-color: #EAEDF1;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    z-index: 2;
-    overflow: hidden;
-    //@include transition(all 0.2s ease);
-
-    @at-root .app-product-navbar-full & {
-      width: 180px;
-      display: block;
-    }
-
-    .wula-sidebar-header{
-      font-weight: bold;
-      font-size: 14px;
-      text-indent: 20px;
-      width: 180px;
-      height: 70px;
-      line-height: 70px;
-      background: #D9DEE4;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .wula-sidebar-list {
-      position: absolute;
-      top: 70px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      overflow-y: auto;
-      overflow-x: hidden;
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        li {
-          a {
+    //dashboard right sidebar style
+    .wula-dashboard-right-sidebar-menu {
+        width: 0px;
+        float: left;
+        background-color: #EAEDF1;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        z-index: 2;
+        overflow: hidden;
+        //@include transition(all 0.2s ease);
+        @at-root .app-product-navbar-full & {
             width: 180px;
-            height: 40px;
-            line-height: 40px;
             display: block;
-            color: #333;
+        }
+        .wula-sidebar-header {
+            font-weight: bold;
+            font-size: 14px;
+            text-indent: 20px;
+            width: 180px;
+            height: 70px;
+            line-height: 70px;
+            background: #D9DEE4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .wula-sidebar-list {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li {
+                    a {
+                        width: 180px;
+                        height: 40px;
+                        line-height: 40px;
+                        display: block;
+                        color: #333;
+                        position: relative;
+                        &:hover {
+                            background-color: #F4F6F8;
+                        }
+                        .nav-icon {
+                            width: 30px;
+                            height: 40px;
+                            float: left;
+                            text-align: center;
+                            font-size: 14px;
+                            color: #333;
+                            line-height: 40px;
+                        }
+                        .nav-title {
+                            width: auto;
+                            float: left;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+                    &.active>a {
+                        background-color: #FFF;
+                    }
+                }
+            }
+            li>ul {
+                display: none;
+            }
+            a.nav-tree-link .nav-icon {
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: 14px;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                line-height: 40px;
+            }
+            li.nav-showchild {
+                a.nav-tree-link .nav-icon:before {
+                    content: "\f0d7";
+                }
+                >ul {
+                    display: block;
+                }
+            }
+            a.nav-tree-link .nav-icon:before {
+                content: "\f0da";
+            }
+            ul ul li a .nav-title {
+                color: #666;
+            }
+            ul ul li a .nav-icon {
+                margin-left: 8px;
+            }
+        }
+    }
+    /*二级导航侧边栏收缩按钮*/
+    .wula-collapse {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 20px;
+        height: 50px;
+        z-index: 103;
+        //@include transition(all 0.2s ease);
+        box-sizing: border-box;
+        .wula-collapse-inner {
+            top: -50%;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        .wula-collapse-icon {
+            width: 0;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-bottom: 9px solid transparent;
+            border-left: 13px solid #D9DEE4;
+            border-top: 9px solid transparent;
+            box-sizing: border-box;
+            @include transition(all 0.1s ease, 0.1s ease);
+            cursor: pointer;
+            &:before {
+                content: "\f101";
+                top: 10px;
+                left: -9px;
+                position: relative;
+            }
             &:hover {
-              background-color: #F4F6F8;
+                border-left: 20px solid #D9DEE4;
             }
-            .nav-icon {
-              width: 30px;
-              height: 40px;
-              float: left;
-              text-align: center;
-              font-size: 14px;
-              color: #333;
-              line-height: 40px;
+        }
+        //rightSidebar展开时按钮样式
+        @at-root .app-product-navbar-full & {
+            left: 160px;
+            .wula-collapse-icon {
+                right: 0;
+                left: auto;
+                border-bottom: 9px solid transparent;
+                border-left: none;
+                border-right: 13px solid #f7f7f7;
+                border-top: 9px solid transparent;
+                &:hover {
+                    border-right: 20px solid #f7f7f7;
+                }
+                &:before {
+                    content: "\f100";
+                    top: 10px;
+                    left: 3px;
+                    position: relative;
+                }
             }
-            .nav-title {
-              width: auto;
-              float: left;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-            }
-          }
-          &.active>a {
-            background-color: #FFF;
-          }
         }
-      }
-      li > ul {
-        display: none;
-      }
-      a.nav-tree-link .nav-icon {
-        display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: 14px;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        line-height: 40px;
-      }
-      li.nav-showchild {
-        a.nav-tree-link .nav-icon:before {
-          content: "\f0d7";
-        }
-        > ul {
-          display: block;
-        }
-      }
-      a.nav-tree-link .nav-icon:before {
-        content: "\f0da";
-      }
-      ul ul li a .nav-title {
-        color: #666;
-      }
-      ul ul li a .nav-icon {
-        margin-left: 8px;
-      }
     }
-  }
-
-  /*二级导航侧边栏收缩按钮*/
-  .wula-collapse {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 20px;
-    height: 50px;
-    z-index: 103;
-    //@include transition(all 0.2s ease);
-    box-sizing: border-box;
-
-    .wula-collapse-inner {
-      top: -50%;
-      position: relative;
-      overflow: hidden;
-      height: 100%;
-    }
-
-    .wula-collapse-icon {
-      width: 0;
-      height: 50px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-bottom: 9px solid transparent;
-      border-left: 13px solid #D9DEE4;
-      border-top: 9px solid transparent;
-      box-sizing: border-box;
-      @include transition(all 0.1s ease, 0.1s ease);
-      cursor: pointer;
-      &:before {
-        content: "\f101";
-        top: 10px;
-        left: -9px;
-        position: relative;
-      }
-      &:hover {
-        border-left: 20px solid #D9DEE4;
-      }
-    }
-
-    //rightSidebar展开时按钮样式
-    @at-root .app-product-navbar-full & {
-      left: 160px;
-
-      .wula-collapse-icon {
-        right: 0;
-        left: auto;
-        border-bottom: 9px solid transparent;
-        border-left: none;
-        border-right: 13px solid #f7f7f7;
-        border-top: 9px solid transparent;
-        &:hover {
-          border-right: 20px solid #f7f7f7;
-
-        }
-        &:before {
-          content: "\f100";
-          top: 10px;
-          left: 3px;
-          position: relative;
-        }
-      }
-    }
-
-  }
-
-
 }

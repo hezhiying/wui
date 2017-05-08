@@ -98,7 +98,7 @@
                     this.isOpen = false;
                 }
             },
-            handleOpenDropdown(){
+            handleOpenDropdown(event){
                 event.stopPropagation();
                 this.isOpen = !this.isOpen;
                 //通过父组通知同级组件关闭

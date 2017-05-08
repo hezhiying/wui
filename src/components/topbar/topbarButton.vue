@@ -9,7 +9,6 @@
 
 </template>
 
-
 <script lang="babel">
     import {fnMenu} from '../../utils/fn'
     export default{
